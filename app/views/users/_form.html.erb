@@ -1,6 +1,6 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.input :introduction, label: 'Introduction', placeholder: 'Some words about yourself' %>
-  <%= f.input :goal_description, label: 'Describe your goal'  %>
+  <%= f.input :goal_description, label: 'Describe your goal', placeholder: 'I want to achieve this goal because ...'  %>
   <div class="form-check">
     <% Goal.all.each do |goal| %>
       <div class="container">
