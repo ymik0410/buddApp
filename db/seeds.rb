@@ -2,7 +2,7 @@ puts "cleaning DB"
 
 Goal.destroy_all
 
-Goal.create([{ name: "Improve personal finances", description: "Having your personal finances in order, is one of the most important things you can do to live a healthy, happy and secure life."},
+Goal.create!([{ name: "Improve personal finances", description: "Having your personal finances in order, is one of the most important things you can do to live a healthy, happy and secure life."},
   { name: "Break a habit", description: "A bad habit can be anything from chain-smoking to obsessively watching videos of cats on YouTube. Habits are contagious - smokers are more likely to quit when they’re hanging out with other quitters."},
   { name: "Eat better", description: "You are what you eat. If you eat a healthy, balanced diet, you will feel better and more energized. "},
   { name: "Improve self-care", description: "Self-care forms an essential part of a lifestyle that keeps us healthy, happy, and more in tune with our minds and bodies. When we take good care of ourselves, we’re likely to see an improvement in many aspects of our lives, including our physical health and relationships."},
@@ -15,4 +15,4 @@ Goal.create([{ name: "Improve personal finances", description: "Having your pers
 ])
 
 
-puts "Created #{Goal.count} goals.
+puts "Created #{Goal.count} goals."
