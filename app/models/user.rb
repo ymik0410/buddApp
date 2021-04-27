@@ -8,5 +8,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  def current_goal
+    self.histories.where(end_date: nil).order(start_date: :desc).first.goal
+  end
 
 end

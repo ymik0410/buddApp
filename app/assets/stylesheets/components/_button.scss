@@ -1,0 +1,14 @@
+.btn {
+  border-radius: 5px;
+  margin-bottom: 7px;
+  background-color: rgb(81,186,151);
+  border-color: rgb(81,186,151);
+}
+
+.btn a {
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

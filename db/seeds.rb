@@ -1,8 +1,25 @@
+require 'faker'
+
 puts "cleaning DB"
 
+History.destroy_all
 Goal.destroy_all
+User.destroy_all
+santa = User.create(first_name: "Santa", last_name: "Cadusch", email: "santa@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote )
 
-Goal.create!([{ name: "Improve personal finances", description: "Having your personal finances in order, is one of the most important things you can do to live a healthy, happy and secure life."},
+50.times do
+  user = User.create!(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: "123456",
+  introduction: Faker::Movies::BackToTheFuture,
+  goal_description: Faker::Movies::StarWars.quote
+)
+end
+
+
+goal = Goal.create!([{ name: "Improve personal finances", description: "Having your personal finances in order, is one of the most important things you can do to live a healthy, happy and secure life."},
   { name: "Break a habit", description: "A bad habit can be anything from chain-smoking to obsessively watching videos of cats on YouTube. Habits are contagious - smokers are more likely to quit when they’re hanging out with other quitters."},
   { name: "Eat better", description: "You are what you eat. If you eat a healthy, balanced diet, you will feel better and more energized. "},
   { name: "Improve self-care", description: "Self-care forms an essential part of a lifestyle that keeps us healthy, happy, and more in tune with our minds and bodies. When we take good care of ourselves, we’re likely to see an improvement in many aspects of our lives, including our physical health and relationships."},
@@ -14,5 +31,23 @@ Goal.create!([{ name: "Improve personal finances", description: "Having your per
   { name: "Get organized", description: "Science has shown getting organized has health benefits, small changes and subsequent improvements in one area can lead to positive effects in other areas."},
 ])
 
+100.times do
+  history = History.create!(
+  user: User.all.shuffle.first,
+  goal: Goal.all.shuffle.first,
+  start_date: Faker::Date.between(from: 100.days.ago, to: Date.today),
+  end_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
+  )
+end
+
+User.all.each do |user|
+  history = History.create!(
+  user: user,
+  goal: Goal.all.shuffle.first,
+  start_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
+  )
+end
 
 puts "Created #{Goal.count} goals."
+puts "Created #{User.count} users."
+puts "Created #{History.count} histories."
