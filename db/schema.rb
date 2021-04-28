@@ -10,8 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
 ActiveRecord::Schema.define(version: 2021_04_27_124351) do
 
   # These are extensions that must be enabled in order to support this database
@@ -36,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_04_27_124351) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "buddyships", force: :cascade do |t|
     t.bigint "user1_id"
@@ -44,7 +43,6 @@ ActiveRecord::Schema.define(version: 2021_04_27_124351) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user1_id"], name: "index_buddyships_on_user1_id"
     t.index ["user2_id"], name: "index_buddyships_on_user2_id"
-
   end
 
   create_table "goals", force: :cascade do |t|
@@ -83,10 +81,8 @@ ActiveRecord::Schema.define(version: 2021_04_27_124351) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-
   add_foreign_key "buddyships", "users", column: "user1_id"
   add_foreign_key "buddyships", "users", column: "user2_id"
-
   add_foreign_key "histories", "goals"
   add_foreign_key "histories", "users"
 end
