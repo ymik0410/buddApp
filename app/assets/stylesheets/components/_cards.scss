@@ -1,24 +1,18 @@
 // .content {
 //   display: flex;
 // }
-
-.container {
-  width: 100px;
-  margin: auto;
-}
-
 .cards {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   margin-top: 30px;
+  border: transparent white;
 }
 
 .card-img-top {
-  width: 50px;
+  width: 10px;
   border-radius: 3px;
-  box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
-  padding: 20px;
-  border: 1px solid rgb(230,230,230);
+  padding: 60px;
+  border: 0px white;
 }
