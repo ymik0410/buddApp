@@ -1,0 +1,75 @@
+.buddy-new{
+    margin-top:40px;
+    background:#f3f3f3;
+    padding-top:40px;
+}
+
+.card.user-card {
+    border-top: none;
+    -webkit-box-shadow: 0 0 1px 2px rgba(0,0,0,0.05), 0 -2px 1px -2px rgba(0,0,0,0.04), 0 0 0 -1px rgba(0,0,0,0.05);
+    box-shadow: 0 0 1px 2px rgba(0,0,0,0.05), 0 -2px 1px -2px rgba(0,0,0,0.04), 0 0 0 -1px rgba(0,0,0,0.05);
+    -webkit-transition: all 150ms linear;
+    transition: all 150ms linear;
+    height: 300px;
+}
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-header {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 25px;
+}
+
+.card .card-header h5 {
+    margin-bottom: 0;
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 1.4;
+}
+
+.card .card-header+.card-block, .card .card-header+.card-block-big {
+    padding-top: 0;
+}
+
+.user-card .card-block {
+    text-align: center;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+
+.m-t-15 {
+    margin-top: 15px;
+}
+
+.card .card-block p {
+    line-height: 1.4;
+    padding-left: 0;
+}
+
+.text-muted {
+    color: #919aa3!important;
+}
+
+.card a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    color: red;
+  }
+}
