@@ -1,16 +1,8 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.input :introduction, label: 'Introduction', placeholder: 'Some words about yourself' %>
   <%= f.input :goal_description, label: 'Describe your goal', placeholder: 'I want to achieve this goal because ...'  %>
-  <div class="form-check">
-    <% Goal.all.each do |goal| %>
-      <div class="container">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-          <%= goal.name %>
-        </label>
-      </div>
-    <% end %>
-  </div>
+
+  <%= f.input :goals, as: :radio_buttons, collection: Goal.all %>
   <%= f.input :image, as: :file %>
   <%= f.submit "Let's start", class: "btn btn-success"%>
 <% end %>
