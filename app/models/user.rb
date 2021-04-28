@@ -9,7 +9,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def current_goal
-    self.histories.where(end_date: nil).order(start_date: :desc).first.goal
+    history = self.histories.where(end_date: nil).order(start_date: :desc).first
+    if history.present?
+      history.goal
+    else
+      return nil
+    end
+
   end
 
 end
