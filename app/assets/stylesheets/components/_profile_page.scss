@@ -1,6 +1,6 @@
 body {
-    color: #797979;
-    background: #f1f2f7;
+    color: #4C5B5C;
+    background: #FFFCF9;
     font-family: 'Open Sans', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
@@ -15,7 +15,7 @@ body {
 }
 
 .profile-nav .user-heading {
-    background: #fbc02d;
+    background: #B1EDE8;
     color: #fff;
     border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
@@ -38,7 +38,7 @@ body {
 }
 
 .profile-nav .user-heading h1 {
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 300;
     margin-bottom: 5px;
 }
@@ -64,19 +64,20 @@ body {
 .profile-nav ul > li > a {
     border-radius: 0;
     -webkit-border-radius: 0;
-    color: #89817f;
+    color: #4C5B5C;
     border-left: 5px solid #fff;
 }
 
 .profile-nav ul > li > a:hover, .profile-nav ul > li > a:focus, .profile-nav ul li.active  a {
     background: #f8f7f5 !important;
-    border-left: 5px solid #fbc02d;
-    color: #89817f !important;
+    border-left: 5px solid #B1EDE8;
+    color: #4C5B5C !important;
 }
 
 .profile-nav ul > li:last-child > a:last-child {
     border-radius: 0 0 4px 4px;
     -webkit-border-radius: 0 0 4px 4px;
+    font-size: 15px;
 }
 
 .profile-nav ul > li > a > i{
@@ -95,7 +96,7 @@ body {
     border: none;
     font-weight: 300;
     box-shadow: none;
-    color: #c3c3c3;
+    color: #4C5B5C;
     font-size: 16px;
 }
 
@@ -105,11 +106,11 @@ body {
 }
 
 .profile-info .panel-footer ul li a {
-    color: #7a7a7a;
+    color: #4C5B5C;
 }
 
 .bio-graph-heading {
-    background: #fbc02d;
+    background: #B1EDE8;
     color: #fff;
     text-align: center;
     font-style: italic;
@@ -121,7 +122,7 @@ body {
 }
 
 .bio-graph-info {
-    color: #89817e;
+    color: #4C5B5C;
 }
 
 .bio-graph-info h1 {
@@ -151,12 +152,21 @@ body {
 }
 
 .bio-desk {
-    width: 60%;
+    width: 100%;
+    background: white;
+    text-align: left;
+    margin-top: 50px;
+    padding-top: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
 
 .bio-desk h4 {
-    font-size: 15px;
+    font-size: 20px;
     font-weight:400;
+    padding-left: 60px;
 }
 
 .bio-desk h4.terques {
@@ -200,6 +210,14 @@ body {
 
 .summary-head p {
     color: rgba(255,255,255,0.6);
+
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    padding-left: 59px;
 }
 
 ul.summary-list {
@@ -263,7 +281,8 @@ ul.summary-list > li:last-child  {
     background: #eee;
     text-align: center;
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
+    padding-left: 60px;
 }
 
 .activity.terques span {
