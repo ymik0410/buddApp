@@ -76,6 +76,10 @@ ActiveRecord::Schema.define(version: 2021_04_27_124351) do
     t.string "introduction"
     t.string "goal_description"
     t.string "photo"
+    t.string "gender"
+    t.date "date_of_birth"
+    t.string "country"
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

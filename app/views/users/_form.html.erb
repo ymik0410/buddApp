@@ -1,4 +1,9 @@
+
 <%= simple_form_for(@user) do |f| %>
+  <%= f.input :username, label: 'Username', placeholder: 'e.g. MorningStar' %>
+  <%= f.input :country, :as => :string, label: 'country', placeholder: 'e.g. France' %>
+  <%= f.input :gender, as: :radio_buttons, collection: ['female', 'male', 'rather not say'] %>
+  <%= f.input :date_of_birth, as: :string, html5: true, label: 'Date of birth' %>
   <%= f.input :introduction, label: 'Introduction', placeholder: 'Some words about yourself' %>
   <%= f.input :goal_description, label: 'Describe your goal', placeholder: 'I want to achieve this goal because ...'  %>
 
