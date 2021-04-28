@@ -1,12 +1,16 @@
 // .content {
 //   display: flex;
 // }
-.cards {
+.card {
   display: flex;
-  justify-content: space-between;
+  align-content: space-around;
   margin-bottom: 100px;
   margin-top: 30px;
   border: transparent white;
 }
+  img {
+    align-items: center;
+    width: 150px;
 
+  }
 
