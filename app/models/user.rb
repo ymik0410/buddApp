@@ -15,7 +15,9 @@ class User < ApplicationRecord
     else
       return nil
     end
-
   end
 
+  def buddyships
+    Buddyship.where("user1_id = ? OR user2_id = ?", self.id, self.id)
+  end
 end

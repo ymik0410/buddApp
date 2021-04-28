@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :buddyships, only: [:new, :create]
+  resources :buddyships, only: [:new, :create, :show]
   resources :users, only: [:edit, :update, :show] do
     resources :histories, only: [:index]
   end
