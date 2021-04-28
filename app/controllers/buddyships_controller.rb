@@ -4,6 +4,6 @@ class BuddyshipsController < ApplicationController
   end
 
   def create
-    raise
+    @buddy = params["buddy"]
   end
 end
