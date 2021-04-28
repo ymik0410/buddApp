@@ -21,6 +21,7 @@ body {
     -webkit-border-radius: 4px 4px 0 0;
     padding: 30px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .profile-nav .user-heading.round a  {
@@ -156,7 +157,7 @@ body {
     background: white;
     text-align: left;
     margin-top: 30px;
-    padding-top: 15px;
+    padding-top: 5px;
     border-radius: 5px;
     border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -269,6 +270,7 @@ ul.summary-list > li:last-child  {
     color: #fff;
     font-size: 20px;
     padding-left: 60px;
+    margin-top: 5px;
 }
 
 .activity.terques span {
@@ -277,27 +279,6 @@ ul.summary-list > li:last-child  {
 
 .activity.terques h4 {
     color: #8dd7d6;
-}
-.activity.purple span {
-    background: #b984dc;
-}
-
-.activity.purple h4 {
-    color: #b984dc;
-}
-.activity.blue span {
-    background: #90b4e6;
-}
-
-.activity.blue h4 {
-    color: #90b4e6;
-}
-.activity.green span {
-    background: #aec785;
-}
-
-.activity.green h4 {
-    color: #aec785;
 }
 
 .activity h4 {
@@ -430,4 +411,8 @@ img {
 
 .font-cond-b {
     font-weight: 700 !important;
+}
+
+.btn-1 {
+  width: 100%;
 }
