@@ -2,25 +2,25 @@
   width:100%;
   padding: 80px 0;
   background-size: cover;
-  background-position: 70% 20%;
-  height: 70vh;
+  background-position: 100% 60%;
+  height: 60vh;
   color: white;
   text-align: center;
+  margin-bottom: 100px;
 
   h1 {
   color: white;
   text-align: center;
-  padding-top: 40vh;
+  padding-top: 15vh;
   text-shadow: 1px 2px black;
   opacity: 1;
   font-size: 40px;
     }
-
 }
 
 
 .home {
-  background-image: asset-url('banner1.jpg');
+  background-image: asset-url('banner2.jpg');
 }
 
  body{margin-top:0px;
@@ -34,55 +34,3 @@
     padding: 0;
     margin: 0 auto;
 }
-
-@media (min-width: 768px){
-    .hash-list.cols-3 > li:nth-last-child(-n+3) {
-        border-bottom: none;
-    }
-}
-@media (min-width: 768px){
-    .hash-list.cols-3 > li {
-        width: 33.3333%;
-    }
-}
-.hash-list > li {
-    display: block;
-    float: left;
-    // border-right: 1px solid rgba(0, 0, 0, 0.2);
-    // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-.pad-30, .pad-30-all > * {
-    padding: 10px;
-}
-img {
-    border: 0;
-}
-.mgb-20, .mgb-20-all > * {
-    margin-bottom: 20px;
-}
-.wpx-100, .wpx-100-after:after {
-    width: 100px;
-}
-.img-round, .img-rel-round {
-    border-radius: 50%;
-}
-.padb-30, .padb-30-all > * {
-    padding-bottom: 30px;
-}
-
-.mgb-40, .mgb-40-all > * {
-    margin-bottom: 40px;
-}
-.align-center {
-    text-align: center;
-}
-[class*="line-b"] {
-    position: relative;
-    padding-bottom: 20px;
-    border-color: #E6AF2A;
-}
-
-.font-cond-b {
-    font-weight: 700 !important;
-}
-
