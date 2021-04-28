@@ -10,9 +10,8 @@
               <h1><%= @user.first_name + " "%><%= @user.last_name %></h1>
           </div>
 
-          <ul class="nav nav-pills nav-stacked">
-              <li><i class="fa fa-edit"><%= link_to "Edit profile", edit_user_path(current_user) %></i>
-          </ul>
+            <div class="btn btn"><%= link_to "Edit profile", edit_user_path(current_user) %></div>
+
       </div>
   </div>
   <div class="profile-info col-md-9">
@@ -54,7 +53,8 @@
                       <div class="panel-body">
                           <div class="bio-desk">
                               <h4 class="terques">Your buddy</h4>
-                              <p>Visit profile</p>
+                              <p><%= link_to current_user.buddyships.first.user1.first_name, user_path(current_user.buddyships.first.user1_id) %></p>
+
                               <p>Share some motivation</p>
                           </div>
                       </div>
