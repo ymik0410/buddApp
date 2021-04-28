@@ -155,11 +155,12 @@ body {
     width: 100%;
     background: white;
     text-align: left;
-    margin-top: 50px;
+    margin-top: 30px;
     padding-top: 15px;
     border-radius: 5px;
     border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
 
 }
 
@@ -173,21 +174,6 @@ body {
     color: #4CC5CD;
 }
 
-.bio-desk h4.red {
-    color: #e26b7f;
-}
-
-.bio-desk h4.green {
-    color: #97be4b;
-}
-
-.bio-desk h4.purple {
-    color: #caa3da;
-}
-
-.file-pos {
-    margin: 6px 0 10px 0;
-}
 
 .profile-activity h5 {
     font-weight: 300;
