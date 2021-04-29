@@ -45,12 +45,6 @@ ActiveRecord::Schema.define(version: 2021_04_29_080319) do
     t.index ["user2_id"], name: "index_buddyships_on_user2_id"
   end
 
-  create_table "chatrooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "goals", force: :cascade do |t|
     t.string "name"
     t.text "description"

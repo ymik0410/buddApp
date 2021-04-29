@@ -18,8 +18,8 @@
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <% if @user.image.attached? %>
-            <%= cl_image_tag @user.image.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.image.attached? %>
+            <%= cl_image_tag current_user.image.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
                 <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png' , id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% end %>
