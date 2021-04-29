@@ -1,8 +1,12 @@
+
 <%= simple_form_for(@user) do |f| %>
+  <%= f.input :username, label: 'Username', placeholder: 'e.g. MorningStar' %>
+  <%= f.input :country, :as => :string, label: 'Country', placeholder: 'e.g. France' %>
+  <%= f.input :gender, as: :radio_buttons, collection: ['female', 'male', 'rather not say'] %>
+  <%= f.input :date_of_birth, as: :string, input_html: {type: :date} , label: 'Date of birth', placeholder: '21.04.1986' %>
   <%= f.input :introduction, label: 'Introduction', placeholder: 'Some words about yourself' %>
   <%= f.input :goal_description, label: 'Describe your goal', placeholder: 'I want to achieve this goal because ...'  %>
-
-  <%= f.input :goals, as: :radio_buttons, collection: Goal.all %>
-  <%= f.input :image, as: :file %>
+  <%= f.input :goals, as: :radio_buttons, collection: Goal.all, input_html: { data: {'toggle' =>  "collapse", 'target' =>  "#collapse_section"} } %>
+  <%= f.input :image, as: :file, label: 'Your avatar' %>
   <%= f.submit "Let's start", class: "btn btn"%>
 <% end %>
