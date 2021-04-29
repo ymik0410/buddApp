@@ -15,5 +15,6 @@ class BuddyshipsController < ApplicationController
 
   def show
     @buddyship = Buddyship.find(params[:id])
+    @message = Message.new
   end
 end
