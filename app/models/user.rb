@@ -17,6 +17,18 @@ class User < ApplicationRecord
     end
   end
 
+  def buddy
+    if self.buddyships.empty?
+      return nil
+    else
+      if self.buddyships.last.user1 == self
+        return self.buddyships.last.user2
+      else
+        return self.buddyships.last.user1
+      end
+    end
+  end
+
   def buddyships
     Buddyship.where("user1_id = ? OR user2_id = ?", self.id, self.id)
   end

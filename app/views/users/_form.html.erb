@@ -8,5 +8,9 @@
   <%= f.input :goal_description, label: 'Describe your goal', placeholder: 'I want to achieve this goal because ...'  %>
   <%= f.input :goals, as: :radio_buttons, collection: Goal.all, input_html: { data: {'toggle' =>  "collapse", 'target' =>  "#collapse_section"} } %>
   <%= f.input :image, as: :file, label: 'Your avatar' %>
-  <%= f.submit "Let's start", class: "btn btn"%>
+    <% if current_user.buddy.present? %>
+      <%= f.submit "Save changes", class: "btn" %>
+    <% else %>
+      <%= f.submit "Let's start", class: "btn" %>
+  <% end %>
 <% end %>

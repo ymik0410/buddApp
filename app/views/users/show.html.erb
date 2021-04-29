@@ -4,14 +4,19 @@
   <div class="profile-nav col-md-3">
       <div class="panel">
           <div class="user-heading round">
-              <a href="#">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-              </a>
-              <h1><%= @user.first_name + " "%><%= @user.last_name %></h1>
+              <% if @user.image.attached? %>
+                <%= cl_image_tag @user.image.key, width: 150, height: 150, crop: :fill, radius: 50, gravity: :face, background: '#1c6ca2', border: {width: 10, color: 'lightblue'} %>
+
+              <% else %>
+                <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png' %>
+              <% end %>
+
+
+              <h1><%= @user.username %></h1>
           </div>
-
+            <% if current_user == @user %>
             <div class="btn btn-1"><%= link_to "Edit profile", edit_user_path(current_user) %></div>
-
+            <% end %>
       </div>
   </div>
   <div class="profile-info col-md-9">
@@ -35,7 +40,7 @@
                       <p><span>Country </span>: @user.country </p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Birthday</span>: @user.birthday</p>
+                      <p><span>Date of birth</span>: @user.date_of_birth.strftime("%B %d, %Y") </p>
                   </div>
                   <div class="bio-row">
                       <p><span>Joined </span>: <%= @user.created_at.strftime("%B %d, %Y")   %></p>
@@ -53,9 +58,9 @@
                       <div class="panel-body">
                           <div class="bio-desk">
                               <h4 class="terques">Your buddy</h4>
-                              <p><%= link_to current_user.buddyships.first.user1.first_name, user_path(current_user.buddyships.first.user1_id) %></p>
+                              <p><%= link_to @user.buddy.username, user_path(@user.buddy.id) %></p>
 
-                              <p>Share some motivation</p>
+                              <p> <%= link_to 'Share some motivation', buddyship_path(@user.buddyships.last) %></p>
                           </div>
                       </div>
                   </div>

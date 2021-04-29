@@ -7,9 +7,11 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     History.create(user: @user, goal_id: params["user"]["goals"], start_date: Date.today)
-
-    # WE HAVE TO CHANGE IT AFTER CREATING THE TOP_MATCHES AND/OR BUDDYSHIPS
-    redirect_to root_path
+    if current_user.buddy.present?
+      redirect_to user_path(current_user)
+    else
+      redirect_to new_buddyship_path
+    end
   end
 
   def show
