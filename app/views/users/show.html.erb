@@ -7,16 +7,36 @@
               <% if @user.image.attached? %>
                 <%= cl_image_tag @user.image.key, width: 150, height: 150, crop: :fill, gravity: :face, radius: 20, background: '#A8DADC', border: {width: 3, color: '#FFFFFF'} %>
               <% else %>
-                <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "" %>
+                <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
               <% end %>
 
 
               <h1><%= @user.username %></h1>
-              <div class="row">
-              <div class="bio-row">
-                      <p><span>First Name </span>: <%= @user.first_name %></p>
-                  </div>
-                   </div>
+
+              <br>
+              <h6>Joined: <%= @user.created_at.strftime("%B %d, %Y") %></h6>
+                      <br>
+                      <h6>Current streak: <%= (Date.today.to_date - @user.created_at.to_date).to_i %></h6>
+                      <br>
+
+                      <h6>First Name: <%= @user.first_name %></h6>
+                      <br>
+                      <h6>Last Name: <%= @user.last_name %></h6>
+                      <br>
+                      <h6>Date of birth:
+                      <% if @user.date_of_birth.present? %>
+                        <%= @user.date_of_birth.strftime("%d %B, %Y") %>
+                      <% else %>
+                        <%= "Not available" %>
+                      <% end %></h6>
+                      <br>
+                      <h6>Country:
+                      <% if @user.country.present? %>
+                        <%= @user.country  %>
+                      <% else %>
+                        <%= "Not available" %>
+                      <% end %></h6>
+
           </div>
             <% if current_user == @user %>
             <div class="btn btn-1"><%= link_to "Edit profile", edit_user_path(current_user) %></div>
@@ -32,41 +52,7 @@
               <h1><%= @user.goal_description %></h1>
           </div>
           <div class="panel-body bio-graph-info">
-              <h1></h1>
-              <div class="row">
-                  <div class="bio-row">
-                      <p><span>First Name </span>: <%= @user.first_name %></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Last Name </span>: <%= @user.last_name %></p>
-                  </div>
-                  <div class="bio-row">
-                    <p><span>Country </span>:
-                      <% if @user.country.present? %>
-                        <%= @user.country  %>
-                      <% else %>
-                        <%= "Not available" %>
-                      <% end %>
-                    </p>
-                  </div>
-                  <div class="bio-row">
-                    <p><span>Date of birth</span>:
-                      <% if @user.date_of_birth.present? %>
-                        <%= @user.date_of_birth.strftime("%d %B, %Y") %>
-                      <% else %>
-                        <%= "Not available" %>
-                      <% end %>
-                    </p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Joined </span>: <%= @user.created_at.strftime("%B %d, %Y")   %></p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Current streak </span>: <%= (Date.today.to_date - @user.created_at.to_date).to_i %></p>
-                  </div>
-              </div>
-          </div>
-      </div>
+
       <div>
           <div class="row">
               <div class="col-md-6">
@@ -85,7 +71,7 @@
                   <div class="panel">
                       <div class="panel-body">
                           <div class="bio-desk">
-                              <h4 class="terques">Your @user.goal.name </h4>
+                              <h4 class="terques"><%= @user.histories.last.goal.name %> </h4>
                               <p><%= @user.goal_description %></p>
                           </div>
                       </div>
@@ -105,9 +91,9 @@
                   <div class="panel">
                       <div class="panel-body">
                           <div class="bio-desk">
-                              <h4 class="terques">History</h4>
-                              <p>Started : 15 July</p>
-                              <p>Deadline : 15 August</p>
+                              <h4 class="terques"><%= @user.histories.last.goal.name %></h4>
+                              <p>Started: <%= @user.histories.last.start_date %></p>
+                              <p>Achieved: Currently working towards</p>
                           </div>
                       </div>
                   </div>
