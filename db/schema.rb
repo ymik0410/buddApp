@@ -71,11 +71,11 @@ ActiveRecord::Schema.define(version: 2021_04_29_080319) do
 
   create_table "messages", force: :cascade do |t|
     t.string "content"
-    t.bigint "chatroom_id", null: false
+    t.bigint "buddyship_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["buddyship_id"], name: "index_messages_on_buddyship_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -105,6 +105,6 @@ ActiveRecord::Schema.define(version: 2021_04_29_080319) do
   add_foreign_key "buddyships", "users", column: "user2_id"
   add_foreign_key "histories", "goals"
   add_foreign_key "histories", "users"
-  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "buddyships"
   add_foreign_key "messages", "users"
 end

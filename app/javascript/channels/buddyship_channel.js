@@ -1,11 +1,11 @@
 import consumer from "./consumer";
 
-const initChatroomCable = () => {
+const initBuddyshipCable = () => {
   const messagesContainer = document.getElementById('messages');
   if (messagesContainer) {
-    const id = messagesContainer.dataset.chatroomId;
+    const id = messagesContainer.dataset.buddyshipId;
 
-    consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
+    consumer.subscriptions.create({ channel: "BuddyshipChannel", id: id }, {
       received(data) {
         messagesContainer.insertAdjacentHTML('beforeend', data);
       },
@@ -13,4 +13,4 @@ const initChatroomCable = () => {
   }
 }
 
-export { initChatroomCable };
+export { initBuddyshipCable };
