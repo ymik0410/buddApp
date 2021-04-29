@@ -1,6 +1,6 @@
 body {
     color: #4C5B5C;
-    background: #FFFCF9;
+    background: #f1faee;
     font-family: 'Open Sans', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
@@ -15,14 +15,18 @@ body {
 }
 
 .profile-nav .user-heading {
-    background: rgb(28,108,162) ;
+    background: #A8DADC ;
     color: #fff;
     border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
-    padding: 30px;
     text-align: center;
+    padding-bottom: 400px;
+    padding-top: 28px;
     margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+
 }
+
 
 .profile-nav .user-heading.round a  {
     border-radius: 50%;
@@ -42,6 +46,7 @@ body {
     font-size: 28px;
     font-weight: 300;
     margin-bottom: 5px;
+    margin-top: 20px;
 }
 
 .profile-nav .user-heading p {
@@ -111,7 +116,7 @@ body {
 }
 
 .bio-graph-heading {
-    background: rgb(28,108,162) ;
+    background: #A8DADC   ;
     color: #fff;
     text-align: center;
     font-style: italic;
@@ -120,6 +125,8 @@ body {
     -webkit-border-radius: 4px 4px 0 0;
     font-size: 16px;
     font-weight: 300;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 30px;
 }
 
 .bio-graph-info {
@@ -154,7 +161,7 @@ body {
 
 .bio-desk {
     width: 100%;
-    background: white;
+    background: #f1faee;
     text-align: left;
     margin-top: 30px;
     padding-top: 5px;
@@ -162,6 +169,8 @@ body {
     border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     margin-bottom: 30px;
+    height: 150px;
+    padding-top: 25px;
 
 }
 
