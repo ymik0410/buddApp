@@ -7,7 +7,7 @@
               <% if @user.image.attached? %>
                 <%= cl_image_tag @user.image.key, width: 150, height: 150, crop: :fill, gravity: :face, radius: 20, background: '#A8DADC', border: {width: 3, color: '#FFFFFF'} %>
               <% else %>
-                <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', width: 100, crop: :fill, radius: 50, gravity: :face, background: '#1D3557 ', border: {width: 10, color: '#1C6CA2'}  %>
+                <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "" %>
               <% end %>
 
 
