@@ -14,4 +14,5 @@ class ApplicationController < ActionController::Base
       edit_user_path(current_user)
     end
   end
+
 end

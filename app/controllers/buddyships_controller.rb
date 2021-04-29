@@ -10,7 +10,7 @@ class BuddyshipsController < ApplicationController
     @buddy = User.find(params["buddy"])
     @buddyship = Buddyship.new(user1_id: @buddy.id, user2_id: current_user.id)
     @buddyship.save
-    redirect_to buddyship_path(@buddyship)
+    redirect_to user_path
   end
 
   def show
