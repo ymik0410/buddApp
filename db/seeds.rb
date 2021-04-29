@@ -2,10 +2,22 @@ require 'faker'
 
 puts "cleaning DB"
 
+Message.destroy_all
 History.destroy_all
 Goal.destroy_all
+Buddyship.destroy_all
 User.destroy_all
+
+puts "destroyed"
+
 santa = User.create(first_name: "Santa", last_name: "Cadusch", email: "santa@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote )
+yulia = User.create(first_name: "Yulia", last_name: "Mikhaylova", email: "yulia@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote )
+
+puts "users created"
+
+Buddyship.create!(user1_id: santa.id, user2_id: yulia.id)
+
+puts "buddyship created"
 
 50.times do
   user = User.create!(
