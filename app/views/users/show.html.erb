@@ -40,7 +40,12 @@
                       <p><span>Country </span>: @user.country </p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Date of birth</span>: @user.date_of_birth.strftime("%B %d, %Y") </p>
+                      <p><span>Date of birth</span>:
+                        <% if @user.date_of_birth.present? %>
+                       <%= @user.date_of_birth.strftime("%B %d, %Y") %>
+                       <% else %>
+                       <%= "Not available" %></p>
+                       <% end %>
                   </div>
                   <div class="bio-row">
                       <p><span>Joined </span>: <%= @user.created_at.strftime("%B %d, %Y")   %></p>
