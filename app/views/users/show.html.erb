@@ -1,3 +1,4 @@
+<div class="prof-body">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container bootstrap snippets bootdey">
 <div class="row">
@@ -91,7 +92,7 @@
                   <div class="panel">
                       <div class="panel-body">
                           <div class="bio-desk">
-                              <h4 class="terques"><%= @user.histories.last.goal.name %></h4>
+                              <h4 class="terques">History: <%= @user.histories.last.goal.name %></h4>
                               <p>Started: <%= @user.histories.last.start_date %></p>
                               <p>Achieved: Currently working towards</p>
                           </div>
@@ -101,5 +102,6 @@
           </div>
       </div>
   </div>
+</div>
 </div>
 </div>
