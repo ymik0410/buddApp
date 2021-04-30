@@ -8,8 +8,8 @@
   <%= f.input :goal_description, label: 'Why is it important for you?', placeholder: 'I want to achieve this goal because ...'  %>
   <%= f.input :image, as: :file, label: 'Your avatar' %>
     <% if current_user.buddy.present? %>
-      <%= f.submit "Save changes", class: "btn" %>
+      <%= f.submit "Save changes", class: "btn btn" %>
     <% else %>
-      <%= f.submit "Let's start", class: "btn" %>
+      <%= f.submit "Let's start", class: "btn btn" %>
   <% end %>
 <% end %>
