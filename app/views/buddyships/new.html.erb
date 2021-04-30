@@ -1,34 +1,33 @@
 <div class="container">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <div class="buddy-new">
+    <!-- <div class="container"> -->
+      <div class="row">
+        <div class="bio-graph-heading">
 
-</div>
+          <h1>We found 3 best buddymatches for you!</h1>
+        </div>
+        <!-- <h2>Choose your buddy now</h2> -->
+        <% @same_goal_available.take(3).each do |buddy| %>
+        <div class="col-md-4">
+            <div class="card user-card buddyships">
+                    <h5>
+                      <%= link_to buddy.first_name, user_path(current_user) %>
+                    </h5>
+                <div class="card-block buddyships">
+                    <p class="text-muted-buddyships"><%= buddy.introduction %></p>
+                    <hr>
+                    <p class="text-muted-buddyships m-t-15"><%= buddy.current_goal.name %></p>
 
-
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="buddy-new">
-  <div class="container">
-    <div class="row">
-      <% @same_goal_available.take(3).each do |buddy| %>
-      <div class="col-md-4">
-          <div class="card user-card">
-              <div class="card-header">
-                  <h5>
-                    <%= link_to buddy.first_name, user_path(current_user) %>
-                  </h5>
-              </div>
-              <div class="card-block">
-                  <p class="text-muted"><%= buddy.introduction %></p>
-                  <hr>
-                  <p class="text-muted m-t-15"><%= buddy.current_goal.name %></p>
-
-                  <hr>
-                  <p class="text-muted m-t-15"><%= buddy.goal_description %></p>
-
-                  <div class="btn btn"><%= link_to "Select", buddyships_path(buddy: buddy.id), method: "POST" %></div>
-              </div>
-          </div>
+                    <hr>
+                    <p class="text-muted-buddyships m-t-15"><%= buddy.goal_description %></p>
+                    <hr>
+                    <div class="btn btn"><%= link_to "Select", buddyships_path(buddy: buddy.id), method: "POST" %></div>
+                </div>
+            </div>
+        </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>
+    <!-- </div> -->
   </div>
 </div>
-

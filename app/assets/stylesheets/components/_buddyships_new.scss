@@ -1,10 +1,9 @@
 .buddy-new{
     margin-top:40px;
-    background:#f3f3f3;
     padding-top:40px;
 }
 
-.card.user-card {
+.card.user-card.buddyships {
     border-top: none;
     -webkit-box-shadow: 0 0 1px 2px rgba(0,0,0,0.05), 0 -2px 1px -2px rgba(0,0,0,0.04), 0 0 0 -1px rgba(0,0,0,0.05);
     box-shadow: 0 0 1px 2px rgba(0,0,0,0.05), 0 -2px 1px -2px rgba(0,0,0,0.04), 0 0 0 -1px rgba(0,0,0,0.05);
@@ -13,7 +12,7 @@
     height: 350px;
 }
 
-.card {
+.card .buddyships {
     border-radius: 5px;
     -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
     box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
@@ -23,13 +22,13 @@
     transition: all 0.3s ease-in-out;
 }
 
-.card .card-header {
-    background-color: transparent;
+.card .card-header .buddyships {
     border-bottom: none;
     padding: 25px;
 }
 
-.card .card-header h5 {
+.card .card-header h5 .buddyships {
+    background-color: #f1faee;
     margin-bottom: 0;
     color: #222;
     font-size: 14px;
@@ -39,15 +38,15 @@
     line-height: 1.4;
 }
 
-.card .card-header+.card-block, .card .card-header+.card-block-big {
+.card .card-header+.card-block, .card .card-header+.card-block-big .buddyships{
     padding-top: 0;
 }
 
-.user-card .card-block {
+.user-card .card-block .buddyships{
     text-align: center;
 }
 
-.card .card-block {
+.card .card-block .buddyships {
     padding: 25px;
 }
 
@@ -56,17 +55,17 @@
     margin-top: 15px;
 }
 
-.card .card-block p {
+.card .card-block .buddyships p {
     line-height: 1.4;
     padding-left: 0;
 }
 
-.text-muted {
+.text-muted-buddyships {
     color: #919aa3!important;
     height: 50px;
 }
 
-.card a {
+.card .buddyships a {
   color: black;
   text-decoration: none;
 
@@ -74,3 +73,4 @@
     color: red;
   }
 }
+
