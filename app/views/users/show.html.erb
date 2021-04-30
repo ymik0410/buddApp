@@ -6,7 +6,7 @@
       <div class="panel">
           <div class="user-heading round">
               <% if @user.image.attached? %>
-                <%= cl_image_tag @user.image.key, width: 150, height: 150, crop: :fill, gravity: :face, radius: 20, background: '#A8DADC', border: {width: 3, color: '#FFFFFF'} %>
+                <%= cl_image_tag @user.image.key, class: "avatar-bordered" %>
               <% elsif @user.photo.present? %>
                 <%= image_tag @user.photo, class: "avatar-bordered" %>
               <% else %>
