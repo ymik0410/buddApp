@@ -1,6 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-buddapp">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "/assets/logo3.png" %>
+s<div class="navbar navbar-expand-sm navbar-light navbar-buddapp">
+  <%= link_to "/", class: "navbar-brand" do %>
+    <%= image_tag "/assets/Icon.png" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -15,7 +15,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", "/", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% if current_user.image.attached? %>
