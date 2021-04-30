@@ -52,9 +52,9 @@ history1 = History.create!(user: user1, goal: goal3, start_date: Faker::Date.bet
 history2 = History.create!(user: user2, goal: goal3, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 history3 = History.create!(user: user3, goal: goal3, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 
-history4 = History.create!(user: user3, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
-history5 = History.create!(user: user2, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
-history6 = History.create!(user: user1, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
+# history4 = History.create!(user: user3, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
+# history5 = History.create!(user: user2, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
+# history6 = History.create!(user: user1, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 
 # 100.times do
 #   history = History.create!(

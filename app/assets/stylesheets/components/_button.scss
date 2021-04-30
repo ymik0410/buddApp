@@ -3,6 +3,10 @@
   margin-bottom: 7px;
   background-color: #1C6CA2;
   color: white !important;
+
+  &:hover {
+    background-color: #1D3557;
+  }
 }
 
 .btn a {
@@ -20,13 +24,4 @@
   margin-bottom: 7px;
   background-color: #1C6CA2;
   color: white;
-}
-
-.btn a {
-  color: white;
-  text-decoration: none;
-
-  &:hover {
-    border: white;
-  }
 }
