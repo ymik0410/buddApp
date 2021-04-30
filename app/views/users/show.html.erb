@@ -85,7 +85,7 @@
                       <div class="panel-body">
                           <div class="bio-desk">
                               <h4 class="terques">Buddy information</h4>
-                              <p>Learn more about <%= link_to @user.buddy.username, user_path(@user.buddy.id), class: "btn btn" %></p>
+                              <p>Learn more about <%= link_to @user.buddy.username, user_path(@user.buddy.id), class: "btn-outline-dark" %></p>
 
                               <p> Go say hi and <%= link_to 'share some motivation', buddyship_path(@user.buddyships.last), class: "btn-outline-dark" %></p>
                           </div>
