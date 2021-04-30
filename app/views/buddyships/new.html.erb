@@ -3,7 +3,7 @@
   <div class="buddy-new">
     <!-- <div class="container"> -->
       <div class="row">
-        <div class="bio-graph-heading">
+        <div class="bio-graph-heading-buddyships">
 
           <h1>We found 3 best buddymatches for you!</h1>
         </div>
@@ -11,18 +11,18 @@
         <% @same_goal_available.take(3).each do |buddy| %>
         <div class="col-md-4">
             <div class="card user-card buddyships">
-                    <h5>
+                    <h5 id="name">
                       <%= link_to buddy.first_name, user_path(current_user) %>
                     </h5>
                 <div class="card-block buddyships">
-                    <p class="text-muted-buddyships"><%= buddy.introduction %></p>
+                    <p class="text-muted-buddyships"><%= buddy.country %></p>
                     <hr>
                     <p class="text-muted-buddyships m-t-15"><%= buddy.current_goal.name %></p>
 
                     <hr>
                     <p class="text-muted-buddyships m-t-15"><%= buddy.goal_description %></p>
                     <hr>
-                    <div class="btn btn"><%= link_to "Select", buddyships_path(buddy: buddy.id), method: "POST" %></div>
+                    <div class="btn btn" id="buddy"><%= link_to "Chose your buddy", buddyships_path(buddy: buddy.id), method: "POST" %></div>
                 </div>
             </div>
         </div>
