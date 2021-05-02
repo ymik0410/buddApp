@@ -1,113 +1,114 @@
 <div class="prof-body">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container bootstrap snippets bootdey">
-<div class="row">
-  <div class="profile-nav col-md-3">
-      <div class="panel">
-          <div class="user-heading round">
-              <% if @user.image.attached? %>
-                <%= cl_image_tag @user.image.key, class: "avatar-bordered" %>
-              <% elsif @user.photo.present? %>
-                <%= image_tag @user.photo, class: "avatar-bordered" %>
-              <% else %>
-                <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
-              <% end %>
+  <div class="container bootstrap snippets bootdey">
+    <div class="row">
+      <div class="profile-nav col-md-3">
+          <div class="panel">
+              <div class="user-heading round">
+                  <% if @user.image.attached? %>
+                    <%= cl_image_tag @user.image.key, class: "avatar-bordered" %>
+                  <% elsif @user.photo.present? %>
+                    <%= image_tag @user.photo, class: "avatar-bordered" %>
+                  <% else %>
+                    <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
+                  <% end %>
 
 
-              <h1><%= @user.username %></h1>
+                  <h1><%= @user.username %></h1>
 
-              <br>
-              <h6><strong>Joined:</strong> <%= @user.created_at.strftime("%B %d, %Y") %></h6>
-                      <br>
-                      <h6><strong>Current streak: </strong> <%= (Date.today.to_date - @user.created_at.to_date).to_i %></h6>
-                      <br>
+                  <br>
+                  <h6><strong>Joined:</strong> <%= @user.created_at.strftime("%B %d, %Y") %></h6>
+                          <br>
+                          <h6><strong>Current streak: </strong> <%= (Date.today.to_date - @user.created_at.to_date).to_i %></h6>
+                          <br>
 
-                      <h6><strong>First Name: </strong> <%= @user.first_name %></h6>
-                      <br>
-                      <h6><strong>Last Name: </strong> <%= @user.last_name %></h6>
-                      <br>
-                      <h6><strong>Date of birth: </strong>
-                      <% if @user.date_of_birth.present? %>
-                        <%= @user.date_of_birth.strftime("%d %B, %Y") %>
-                      <% else %>
-                        <%= "Not available" %>
-                      <% end %></h6>
-                      <br>
-                      <h6><strong>Country: </strong>
-                      <% if @user.country.present? %>
-                        <%= @user.country  %>
-                      <% else %>
-                        <%= "Not available" %>
-                      <% end %></h6>
+                          <h6><strong>First Name: </strong> <%= @user.first_name %></h6>
+                          <br>
+                          <h6><strong>Last Name: </strong> <%= @user.last_name %></h6>
+                          <br>
+                          <h6><strong>Date of birth: </strong>
+                          <% if @user.date_of_birth.present? %>
+                            <%= @user.date_of_birth.strftime("%d %B, %Y") %>
+                          <% else %>
+                            <%= "Not available" %>
+                          <% end %></h6>
+                          <br>
+                          <h6><strong>Country: </strong>
+                          <% if @user.country.present? %>
+                            <%= @user.country  %>
+                          <% else %>
+                            <%= "Not available" %>
+                          <% end %></h6>
+
+              </div>
+                <% if current_user == @user %>
+                <div class="btn btn-1"><%= link_to "Edit profile", edit_user_path(current_user) %></div>
+                <% end %>
+          </div>
+      </div>
+      <div class="profile-info col-md-9">
+          <div class="panel">
 
           </div>
-            <% if current_user == @user %>
-            <div class="btn btn-1"><%= link_to "Edit profile", edit_user_path(current_user) %></div>
-            <% end %>
+          <div class="panel">
+              <div class="bio-graph-heading">
+                  <h1><%= @user.histories.last.goal.name %></h1>
+                  <br>
+                  <h2>Together with <%= @user.buddy.username %></h2>
+              </div>
+              <div class="panel-body bio-graph-info">
+
+          <div>
+              <div class="row">
+                <div class="col-md-6">
+                      <div class="panel">
+                          <div class="panel-body">
+                              <div class="bio-desk">
+                                  <h4 class="terques">About me</h4>
+                                  <p><%= @user.introduction %></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="panel">
+                          <div class="panel-body">
+                              <div class="bio-desk">
+                                  <h4 class="terques">My motivation</h4>
+                                  <p><%= @user.goal_description %></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="panel">
+                          <div class="panel-body">
+                              <div class="bio-desk">
+                                  <h4 class="terques">Buddy information</h4>
+                                  <p>Learn more about <%= link_to @user.buddy.username, user_path(@user.buddy.id), class: "btn-outline-dark" %></p>
+
+                                  <p> Go say hi and <%= link_to 'share some motivation', buddyship_path(@user.buddyships.last), class: "btn-outline-dark" %></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="panel">
+                          <div class="panel-body">
+                              <div class="bio-desk">
+                                  <h4 class="terques">History</h4>
+                                  <h4><%= @user.histories.last.goal.name %></h4>
+                                  <p>Started: <%= @user.histories.last.start_date %></p>
+                                  <p>Achieved: In progress</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
-  <div class="profile-info col-md-9">
-      <div class="panel">
-
-      </div>
-      <div class="panel">
-          <div class="bio-graph-heading">
-              <h1><%= @user.histories.last.goal.name %></h1>
-              <br>
-              <h2>Together with <%= @user.buddy.username %></h2>
-          </div>
-          <div class="panel-body bio-graph-info">
-
-      <div>
-          <div class="row">
-            <div class="col-md-6">
-                  <div class="panel">
-                      <div class="panel-body">
-                          <div class="bio-desk">
-                              <h4 class="terques">About me</h4>
-                              <p><%= @user.introduction %></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="panel">
-                      <div class="panel-body">
-                          <div class="bio-desk">
-                              <h4 class="terques">My motivation</h4>
-                              <p><%= @user.goal_description %></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="panel">
-                      <div class="panel-body">
-                          <div class="bio-desk">
-                              <h4 class="terques">Buddy information</h4>
-                              <p>Learn more about <%= link_to @user.buddy.username, user_path(@user.buddy.id), class: "btn-outline-dark" %></p>
-
-                              <p> Go say hi and <%= link_to 'share some motivation', buddyship_path(@user.buddyships.last), class: "btn-outline-dark" %></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="panel">
-                      <div class="panel-body">
-                          <div class="bio-desk">
-                              <h4 class="terques">History</h4>
-                              <h4><%= @user.histories.last.goal.name %></h4>
-                              <p>Started: <%= @user.histories.last.start_date %></p>
-                              <p>Achieved: In progress</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-          </div>
-      </div>
-  </div>
-</div>
-</div>
 </div>
