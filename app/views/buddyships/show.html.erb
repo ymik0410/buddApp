@@ -1,7 +1,7 @@
 <div class="container">
 <div class="bio-graph-heading-buddyships">
   <h1>Welcome to your accountability space,</h1>
-<h1><%= @buddyship.user1.first_name %> and <%= @buddyship.user2.first_name %></h1>
+<h1><%= @buddyship.user1.username %> and <%= @buddyship.user2.username %></h1>
  </div>
 <div id="messages" data-buddyship-id="<%= @buddyship.id %>">
   <% @buddyship.messages.each do |message| %>
