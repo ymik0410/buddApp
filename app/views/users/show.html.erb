@@ -13,7 +13,7 @@
                 <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
               <% end %>
 
-                <h1><%= @user.username %></h1>
+                <h2 class="pt-2"><%= @user.username %></h2>
                 <h6><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></h6>
                 <h6><strong>Joined: </strong> <%= @user.created_at.strftime("%B %d, %Y") %></h6>
                 <h6><strong>Current streak: </strong> <%= (Date.today.to_date - @user.created_at.to_date).to_i %></h6>
@@ -45,17 +45,14 @@
             <div class="card border-profile text-center">
 
               <div class="card-body card-body-profile">
-                <h1 class="card-title"><%= @user.histories.last.goal.name %></h1>
+                <h1 class="card-title pb-0"><%= @user.histories.last.goal.name %></h1>
                  <% if @user.buddy.present? %>
-                <h6 class="card-text">Together with <%= @user.buddy.username %></h6>
+                <h2><%= image_tag "hands.png", class: "hello", alt:"" %> with <%= link_to @user.buddy.username, user_path(@user.buddy.id), class: "btn-profile" %></h2>
                   <% end %>
-                   <% if @user.buddy.present? %>
-                 <h6> Say hello and <%= link_to 'share some motivation', buddyship_path(@user.buddyships.last), class: "btn-profile" %></h6>
-                 <% end %>
               </div>
               <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link active btn-profile-blue" id="nav-achievments-tab" data-toggle="tab" href="#nav-achievments" role="tab" aria-controls="nav-achievments" aria-selected="true">Achievements</a>
+                  <a class="nav-item nav-link active-1 btn-profile-blue" id="nav-achievments-tab" data-toggle="tab" href="#nav-achievments" role="tab" aria-controls="nav-achievments" aria-selected="true">Achievements</a>
                   <a class="nav-item nav-link btn-profile-blue" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="false">Bio</a>
                   <a class="nav-item nav-link btn-profile-blue" id="nav-motivation-tab" data-toggle="tab" href="#nav-motivation" role="tab" aria-controls="nav-motivation" aria-selected="false">Motivation</a>
                   <a class="nav-item nav-link btn-profile-blue" id="nav-history-tab" data-toggle="tab" href="#nav-history" role="tab" aria-controls="nav-history" aria-selected="false">History</a>
@@ -64,7 +61,7 @@
               <div class="tab-content pt-3 pb-2" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-achievments" role="tabpanel" aria-labelledby="nav-achievments-tab">Mini daily goals + tick boxes</div>
                 <div class="tab-pane fade" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab"><p><%= @user.introduction %></p></div>
-                <div class="tab-pane fade" id="nav-motivation" role="tabpanel" aria-labelledby="nav-motivation-tab"><%= @user.goal_description %></div>
+                <div class="tab-pane fade" id="nav-motivation" role="tabpanel" aria-labelledby="nav-motivation-tab"><p><%= @user.goal_description %></p></div>
                 <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab"><h4><%= @user.histories.last.goal.name %></h4>
                                                 <p>Started: <%= @user.histories.last.start_date %></p>
                                                 <p>Achieved: In progress</p></div>
@@ -123,6 +120,9 @@
                       <%= "Not available" %>
                     <% end %></h6>
                   <% end %>
+                   <% if @user.buddy.present? %>
+                 <h6 class="card-text d-flex align-items-center"><div class="row"><%= image_tag "hello.png", class: "hello pr-3", alt:"" %> </div> <%= link_to 'SHARE SOME MOTIVATION', buddyship_path(@user.buddyships.last), class: "btn-profile" %></h6>
+                 <% end %>
 
                   </div>
                 </div>
