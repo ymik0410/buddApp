@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+  <% @goals.each do |goal| %>
+    <div class="col-md-4">
+        <div class="card user-card buddyships">
+          <h5 id="name"><%= goal.name.upcase %></h5>
+          <div class="short-line"><hr></div>
+          <div class="card-block buddyships">
+            <p class="text-muted-buddyships"><%= goal.description %></p>
+          <hr>
+          <div class="btn btn" id="buddy"><%= link_to "Choose this goal"%></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
