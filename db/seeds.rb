@@ -8,29 +8,29 @@ Goal.destroy_all
 Buddyship.destroy_all
 User.destroy_all
 
-# puts "destroyed"
+puts "destroyed"
 
-# santa = User.create(first_name: "Santa", last_name: "Cadusch", email: "santa@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote )
-# yulia = User.create(first_name: "Yulia", last_name: "Mikhaylova", email: "yulia@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote )
+santa = User.create(first_name: "Santa", last_name: "Cadusch", email: "santa@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote )
+yulia = User.create(first_name: "Yulia", last_name: "Mikhaylova", email: "yulia@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote )
 
-# puts "users created"
+puts "users created"
 
-# Buddyship.create!(user1_id: santa.id, user2_id: yulia.id)
+Buddyship.create!(user1_id: santa.id, user2_id: yulia.id)
 
-# puts "buddyship created"
+puts "buddyship created"
 
-# 50.times do
-#   user = User.create!(
-#   username: Faker::Games::Heroes.specialty,
-#   country: Faker::Address.country,
-#   first_name: Faker::Name.first_name,
-#   last_name: Faker::Name.last_name,
-#   email: Faker::Internet.email,
-#   password: "123456",
-#   introduction: Faker::TvShows::TheExpanse.quote,
-#   goal_description: Faker::Movies::StarWars.quote
-# )
-# end
+50.times do
+  user = User.create!(
+  username: Faker::Games::Heroes.specialty,
+  country: Faker::Address.country,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: "123456",
+  introduction: Faker::TvShows::TheExpanse.quote,
+  goal_description: Faker::Movies::StarWars.quote
+)
+end
 user1 = User.create!(first_name: "Gloria", last_name: "Lopez", username: "Espanolita", email: "gl@gmail.com", password: "123456", country: "Spain", introduction: "Hola! I am Gloria from Spain, I have 2 children and we live in sunny Costa del Sol. I am very happy to be part od BuddApp! :)", goal_description: "I have struggled to get back in shape after having my kids. Every Monday I start again and by Wednesday I have gone off the track. I finally want to commit and reach my goal and feel great in my body.", photo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carolina_Mar%C3%ADn_2014_%28cropped%29.jpg" )
 user2 = User.create!(first_name: "Anna", last_name: "Schmidt", username: "Pineapple1", email: "as@gmail.com", password: "123456", country: "Germany", introduction: "My name is Anna and I live in Berlin. I am a foodie and enjoyed going out and spending time with my friends and family who are also big food lovers.", goal_description: "It would be important for me to reach my goal as I want to improve my health but it is really hard to start as people around me eat the same way I do now and I want to change it.", photo: "https://i.pinimg.com/originals/7c/ca/6d/7cca6dfb54604fdef17282d84d737e5a.jpg")
 user3 = User.create!(first_name: "Jane", last_name: "Brown", username: "JaneyB", email: "jb@gmail.com", password: "123456", country: "United Kingdom", introduction: "Hi there! Very excited to be here and find a like minded person to achieve my goal with. I was born and raised in London and still live here. I enjoy long walks in the nature on the weekends.", goal_description: "I work long hours and skip my meals very often. I find it hard to stick to healthy eating on daily basis and I think it would help me to be accountable to another person.", photo:"http://2.bp.blogspot.com/-KRRjbk8tDQ8/UFnvdU-ejnI/AAAAAAAAAKY/hZohlhcb_lU/s400/stylish-girls-dp-facebook-7.jpg")
@@ -52,26 +52,26 @@ history1 = History.create!(user: user1, goal: goal3, start_date: Faker::Date.bet
 history2 = History.create!(user: user2, goal: goal3, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 history3 = History.create!(user: user3, goal: goal3, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 
-# history4 = History.create!(user: user3, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
-# history5 = History.create!(user: user2, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
-# history6 = History.create!(user: user1, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
+history4 = History.create!(user: user3, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
+history5 = History.create!(user: user2, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
+history6 = History.create!(user: user1, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 
-# 100.times do
-#   history = History.create!(
-#   user: User.all.shuffle.first,
-#   goal: Goal.all.shuffle.first,
-#   start_date: Faker::Date.between(from: 300.days.ago, to: Date.today),
-#   end_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
-#   )
-# end
+100.times do
+  history = History.create!(
+  user: User.all.shuffle.first,
+  goal: Goal.all.shuffle.first,
+  start_date: Faker::Date.between(from: 300.days.ago, to: Date.today),
+  end_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
+  )
+end
 
-# User.all.each do |user|
-#   history = History.create!(
-#   user: user,
-#   goal: Goal.all.shuffle.first,
-#   start_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
-#   )
-# end
+User.all.each do |user|
+  history = History.create!(
+  user: user,
+  goal: Goal.all.shuffle.first,
+  start_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
+  )
+end
 
 puts "Created #{Goal.count} goals."
 puts "Created #{User.count} users."
