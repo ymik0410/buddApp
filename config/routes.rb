@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  resources :goals, only: :index
   resources :buddyships, only: [:new, :create, :show] do
     resources :messages, only: :create
   end
