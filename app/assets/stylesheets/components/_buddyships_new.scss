@@ -60,7 +60,6 @@
 
 .text-muted-buddyships {
     color: #919aa3!important;
-
 }
 
 .card .buddyships a {
@@ -86,7 +85,8 @@
 
 #name {
   margin: 20px auto;
-
+  text-align: center;
+  min-height: 47px;
 
   a {
     text-decoration: none;
