@@ -16,6 +16,10 @@
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "Your last name", :placeholder => 'eg. Smith' }%>
+            <%= f.input :country,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "Choose your country", :placeholder => 'eg. France' }%>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
