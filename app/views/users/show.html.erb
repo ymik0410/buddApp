@@ -1,5 +1,6 @@
 <div class="prof-body">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
   <div class="container bootstrap snippets bootdey">
     <div class="row">
       <div class="profile-nav col-md-3">
@@ -12,6 +13,7 @@
                   <% else %>
                     <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
                   <% end %>
+
 
 
                   <h1><%= @user.username %></h1>
@@ -80,12 +82,14 @@
                           </div>
                       </div>
                   </div>
+
                   <div class="col-md-6">
                       <div class="panel">
                           <div class="panel-body">
                               <div class="bio-desk">
                                   <h4 class="terques">Buddy information</h4>
                                   <p>Learn more about <%= link_to @user.buddy.username, user_path(@user.buddy.id), class: "btn-outline-dark" %></p>
+
 
                                   <p> Go say hi and <%= link_to 'share some motivation', buddyship_path(@user.buddyships.last), class: "btn-outline-dark" %></p>
                               </div>
