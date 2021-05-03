@@ -46,15 +46,19 @@
 
               <div class="card-body card-body-profile">
                 <h1 class="card-title"><%= @user.histories.last.goal.name %></h1>
+                 <% if @user.buddy.present? %>
                 <h6 class="card-text">Together with <%= @user.buddy.username %></h6>
-                 <h6> Say hello and <%= link_to 'share some motivation', buddyship_path(@user.buddyships.last), class: "btn" %></h6>
+                  <% end %>
+                   <% if @user.buddy.present? %>
+                 <h6> Say hello and <%= link_to 'share some motivation', buddyship_path(@user.buddyships.last), class: "btn-profile" %></h6>
+                 <% end %>
               </div>
               <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link active" id="nav-achievments-tab" data-toggle="tab" href="#nav-achievments" role="tab" aria-controls="nav-achievments" aria-selected="true">Achievements</a>
-                  <a class="nav-item nav-link" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="false">Bio</a>
-                  <a class="nav-item nav-link" id="nav-motivation-tab" data-toggle="tab" href="#nav-motivation" role="tab" aria-controls="nav-motivation" aria-selected="false">Motivation</a>
-                  <a class="nav-item nav-link" id="nav-history-tab" data-toggle="tab" href="#nav-history" role="tab" aria-controls="nav-history" aria-selected="false">History</a>
+                  <a class="nav-item nav-link active btn-profile-blue" id="nav-achievments-tab" data-toggle="tab" href="#nav-achievments" role="tab" aria-controls="nav-achievments" aria-selected="true">Achievements</a>
+                  <a class="nav-item nav-link btn-profile-blue" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="false">Bio</a>
+                  <a class="nav-item nav-link btn-profile-blue" id="nav-motivation-tab" data-toggle="tab" href="#nav-motivation" role="tab" aria-controls="nav-motivation" aria-selected="false">Motivation</a>
+                  <a class="nav-item nav-link btn-profile-blue" id="nav-history-tab" data-toggle="tab" href="#nav-history" role="tab" aria-controls="nav-history" aria-selected="false">History</a>
                 </div>
               </nav>
               <div class="tab-content pt-3 pb-2" id="nav-tabContent">
@@ -73,6 +77,7 @@
             <div class="card-body">
               <div class="panel">
                 <div class="user-heading round">
+                  <% if @user.buddy.present? %>
                     <% if @user.buddy.image.attached? %>
                       <%= cl_image_tag @user.buddy.image.key, class: "avatar-bordered" %>
                     <% elsif @user.buddy.photo.present? %>
@@ -80,26 +85,44 @@
                     <% else %>
                       <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
                     <% end %>
+                  <% end %>
 
-                  <h1><%= @user.buddy.username %></h1>
-                  <h6><strong>Name:</strong> <%= @user.buddy.first_name %> <%= @user.buddy.last_name %></h6>
-                  <h6><strong>Joined: </strong> <%= @user.buddy.created_at.strftime("%B %d, %Y") %></h6>
-                  <h6><strong>Current streak: </strong> <%= (Date.today.to_date - @user.buddy.created_at.to_date).to_i %></h6>
-                  <h6><strong>Longest streak: </strong> <%= (Date.today.to_date - @user.created_at.to_date).to_i %></h6>
-                  <br>
-                  <h6><strong>Date of birth: </strong>
-                  <% if @user.buddy.date_of_birth.present? %>
-                    <%= @user.buddy.date_of_birth.strftime("%d %B, %Y") %>
+                  <% if @user.buddy.present? %>
+                    <h1><%= @user.buddy.username %></h1>
                   <% else %>
-                    <%= "Not available" %>
-                  <% end %></h6>
+                    <h1>No buddy yet</h1>
+                    <h6>Search in progress...</h6>
+                  <% end %>
+                  <% if @user.buddy.present? %>
+                    <h6><strong>Name:</strong> <%= @user.buddy.first_name %> <%= @user.buddy.last_name %></h6>
+                  <% end %>
+                  <% if @user.buddy.present? %>
+                    <h6><strong>Joined: </strong> <%= @user.buddy.created_at.strftime("%B %d, %Y") %></h6>
+                  <% end %>
+                  <% if @user.buddy.present? %>
+                    <h6><strong>Current streak: </strong> <%= (Date.today.to_date - @user.buddy.created_at.to_date).to_i %></h6>
+                  <% end %>
+                  <% if @user.buddy.present? %>
+                    <h6><strong>Longest streak: </strong> <%= (Date.today.to_date - @user.created_at.to_date).to_i %></h6>
+                  <% end %>
                   <br>
-                  <h6><strong>Country: </strong>
-                  <% if @user.buddy.country.present? %>
-                    <%= @user.buddy.country  %>
-                  <% else %>
-                    <%= "Not available" %>
-                  <% end %></h6>
+                  <% if @user.buddy.present? %>
+                    <h6><strong>Date of birth: </strong>
+                    <% if @user.buddy.date_of_birth.present? %>
+                      <%= @user.buddy.date_of_birth.strftime("%d %B, %Y") %>
+                    <% else %>
+                      <%= "Not available" %>
+                    <% end %></h6>
+                  <% end %>
+                  <br>
+                  <% if @user.buddy.present? %>
+                    <h6><strong>Country: </strong>
+                    <% if @user.buddy.country.present? %>
+                      <%= @user.buddy.country  %>
+                    <% else %>
+                      <%= "Not available" %>
+                    <% end %></h6>
+                  <% end %>
 
                   </div>
                 </div>

@@ -47,7 +47,25 @@ height: 80%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.btn-profile {
+  color: #E63946;
+  text-decoration: none;
 
+  &:hover {
+    color: #1D3557;
+    text-decoration: none;
+  }
+}
+
+.btn-profile-blue {
+  color: #1D3557;
+  text-decoration: none;
+
+  &:hover {
+    color: #E63946;
+    text-decoration: none;
+  }
+}
 
 
 .profile-nav .user-heading h1 {
