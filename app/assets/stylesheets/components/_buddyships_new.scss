@@ -1,3 +1,75 @@
+// body {
+//     background: linear-gradient(90deg, #E63946 0%, #1D3557 100%)
+// }
+
+.container-buddyship {
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+    margin-bottom: 50px;
+}
+
+.title-buddyship {
+    font-size: 25px;
+    font-weight: 100;
+    padding-top: 100px;
+}
+
+.icon-buddyship {
+    position: relative;
+    bottom: 11px
+}
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.profile-buddyship img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 1px #1D3557;
+}
+
+.card-buddyship {
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
+}
+.card-title.buddyship-name {
+    color: #1D3557;
+    font-size: 15px;
+}
+
+.card-body {
+    position: relative;
+    bottom: 35px;
+    min-height: 350px;
+}
+
+.btn-buddyship {
+    // margin-top: 36px;
+    margin-bottom: 40px;
+    background-color: #E63946;
+    border: none;
+    color: #fff
+}
+
+.btn:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    color: #fff
+}
+
+.header {
+    padding-top: 40px
+}
+
+
+
 .buddy-new{
     margin-top:40px;
     padding-top:40px;
