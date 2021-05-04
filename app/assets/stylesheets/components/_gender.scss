@@ -24,10 +24,12 @@
   border: 1px solid #EAEAEA;
   border-radius: 4px;
   background-color: white;
+  height: 100%;
 }
 
 .category-selector:checked + label {
-  color: $red !important;
+  color: #E63946 !important;
+  border-color: #1D3557;
 }
 
 
@@ -52,18 +54,5 @@
   background-size: contain;
   background-position: right;
   padding-right: 54px;
-  padding-bottom: 13px;
 }
 
-#user_gender_male:checked + label {
-  border-color: #1D3557;
-}
-
-
-#user_gender_rather_not_say:checked + label {
-  border-color: #1D3557;
-}
-
-#user_gender_female:checked + label {
-  border-color: #1D3557;
-}
