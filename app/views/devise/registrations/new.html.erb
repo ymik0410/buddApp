@@ -32,9 +32,13 @@
                         input_html: {type: :date},
                         label: 'Date of birth',
                         placeholder: '21.04.1986' %>
-            <%= f.input :gender,
+            <%# = f.input :gender,
                         as: :radio_buttons,
-                        collection: ['female', 'male', 'rather not say'] %>
+                        collection: [['female', 'woman'], ['male', 'boy'], ['rather not say', 'no_gender'],
+                        # gender.label { image_tag "#{gender.text}.png" % >
+            <%= f.input :language,
+                        label: 'Language',
+                        placeholder: 'e.g. English' %>
             <%= f.input :image,
                         as: :file,
                         label: 'Your avatar' %>
