@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :daily_goals, dependent: :destroy
   has_many :histories, dependent: :destroy
   has_many :goals, through: :histories
   has_one_attached :image
