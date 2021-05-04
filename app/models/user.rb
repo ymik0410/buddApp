@@ -18,7 +18,7 @@ class User < ApplicationRecord
     end
   end
 
-  def streak
+  def streakk
     @streak_count = 0
     today = Time.now.to_date
 
@@ -38,7 +38,7 @@ class User < ApplicationRecord
     @streak_count
   end
 
-  def longest_streak
+  def longest_streakk
     streaks = []
     streaks << @streak_count
     longest_streak = streaks.max

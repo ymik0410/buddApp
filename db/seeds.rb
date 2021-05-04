@@ -10,8 +10,8 @@ User.destroy_all
 
 puts "destroyed"
 
-santa = User.create(first_name: "Santa", last_name: "Cadusch", email: "santa@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote )
-yulia = User.create(first_name: "Yulia", last_name: "Mikhaylova", email: "yulia@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote )
+santa = User.create(first_name: "Santa", username: "Santana", last_name: "Cadusch", streak: 10, longest_streak: 11, email: "santa@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote, country: "Switzerland" )
+yulia = User.create(first_name: "Yulia", last_name: "Mikhaylova", username: "Yuliana", email: "yulia@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote, country: "Barbados" )
 
 puts "users created"
 

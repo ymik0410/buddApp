@@ -2,6 +2,7 @@
     <div class="header-buddyship">
         <div class="title-buddyship">We found 3 best buddymatches for you!</div>
     </div>
+    <div class="btn-profile-less pt-3"><%= link_to "Go back", user_path(current_user) %></div>
 
     <div class="row" style="justify-content: center">
         <% @same_goal_available.take(3).each do |buddy| %>
