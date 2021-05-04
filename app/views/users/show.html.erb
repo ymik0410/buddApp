@@ -62,19 +62,31 @@
               </nav>
               <div class="tab-content pt-3 pb-2" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-achievments" role="tabpanel" aria-labelledby="nav-achievments-tab">
-                  <% @daily_goals.each do |goal| %>
-                    <div class="d-flex justify-content-start pl-5">
-                      <%= link_to check_box_tag 'done',  controller: "daily_goals", action: "edit" %>
-                      <p><%= goal.name %>
-                      <%= link_to(content_tag(:i, nil, class: "far fa-trash-alt pl-2 bin"), method: :delete, data: { confirm: 'Are you sure?' }) %>
 
+                  <% @user.daily_goals.each do |goal| %>
+                    <div class="d-flex justify-content-start pl-5">
+                      <% if goal.done %>
+                        <%= link_to daily_goal_path(goal), method: :patch do %>
+                          <p><i class="far fa-check-square"></i></p>
+                        <% end %>
+                      <% else %>
+                        <%= link_to daily_goal_path(goal), method: :patch do %>
+                          <p><i class="far fa-square"></i></p>
+                        <% end %>
+                      <% end %>
+                      <p ><%= goal.name %>
+                      <%= link_to daily_goal_path(goal), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <div class= "goal-links"><i class="far fa-trash-alt"></i></div>
+                      <% end %>
                       </p>
                     </div>
                   <% end %>
                   <div class="container-profile">
+                    <% if current_user == @user %>
                     <%= simple_form_for @daily_goal do |f| %>
-                      <h6><%= f.input :name, label: "Add a new daily goal", class: "" %></h6>
-                      <%= f.submit class: "btn btn" %>
+                      <h6><%= f.input :name, label: "Add new daily goal", class: "" %></h6>
+                      <%= f.submit "Submit", class: "btn" %>
+                    <% end %>
                     <% end %>
                   </div>
                 </div>
@@ -82,9 +94,15 @@
                 <div class="tab-pane fade" id="nav-motivation" role="tabpanel" aria-labelledby="nav-motivation-tab"><p><%= @user.goal_description %></p></div>
                 <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab"><h4>
                   <% @user.histories.each do |history| %></h4>
-                    <h6 class="text-center"><%= history.goal.name %></h6>
-                    <p>Started: <%= history.start_date %></p>
-                      <p>Achieved: <%= history.end_date %></p>
+                    <h6 class="text-center mr-4"><%= history.goal.name %></h6>
+                    <p>Started: <%= history.start_date.strftime("%B %d, %Y") %></p>
+                      <p>Achieved:
+                        <% if history.end_date.present? %>
+                          <%= history.end_date.strftime("%B %d, %Y") %>
+                        <% else %>
+                        In progress
+                        <% end %>
+                        </p>
                   <% end %>
                 </div>
               </div>

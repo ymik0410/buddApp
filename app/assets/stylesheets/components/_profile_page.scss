@@ -64,9 +64,6 @@ height: 90%;
   }
 }
 
-ul {
-    list-style-type: none;
-}
 
 .btn-profile-blue {
   color: #1D3557;
@@ -101,14 +98,20 @@ ul {
   border-top-right-radius: 5px;
 }
 
-.bin {
+.goal-links a {
   color: #808080a3;
   text-decoration: none;
 
-  .bin :hover {
+  &:hover {
     opacity: 1;
     color: #423f3f;
   }
+}
+
+.goal-tick a {
+  color: #808080a3;
+  text-decoration: none;
+
 }
 
 
@@ -120,67 +123,11 @@ ul {
 h6, h5 {
   color: #1D3557;
   text-align: left;
-  padding-left: 10px;
+  // padding-left: 10px;
 }
 
 h1, h2, h4, p {
   color: #403c3c;
-}
-
-.hello {
-  width: 70px;
-}
-
-
-.profile-nav .user-heading h1 {
-    font-size: 28px;
-    font-weight: 300;
-    margin-bottom: 5px;
-    margin-top: 20px;
-    color: #1D3557;
-}
-
-
-.bio-graph-heading {
-    color: grey;
-    text-align: center;
-    font-style: italic;
-    padding: 40px 110px;
-    border-radius: 4px 4px 0 0;
-    -webkit-border-radius: 4px 4px 0 0;
-    font-size: 16px;
-    font-weight: 300;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    padding: 30px;
-    color: #1D3557;
-    margin-left: 50px;
-    width: 100%;
-}
-
-
-.bio-desk {
-    width: 100%;
-    background: #f1faee;
-    text-align: left;
-    margin-top: 30px;
-    padding-top: 5px;
-    border-radius: 5px;
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    height: 240px;
-    padding-top: 25px;
-    margin-left: 50px;
-
-}
-
-.bio-desk h4 {
-    font-size: 20px;
-    font-weight:400;
-    padding-left: 60px;
-}
-
-.bio-desk h4.terques {
-    color: #1D3557;
 }
 
 
@@ -194,50 +141,7 @@ p {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 15px;
-    padding-left: 20px;
-}
-
-.activity span, .activity.alt span {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    background: #eee;
-    text-align: center;
-    color: #fff;
-    font-size: 20px;
-    padding-left: 60px;
-    margin-top: 5px;
-}
-
-
-.activity.terques h4 {
-    color: #8dd7d6;
-}
-
-
-
-.activity .activity-desk .arrow {
-    border-bottom: 8px solid transparent;
-    border-top: 8px solid transparent;
-    display: block;
-    height: 0;
-    left: -7px;
-    position: absolute;
-    top: 13px;
-    width: 0;
-}
-
-.activity-desk .arrow-alt {
-    border-bottom: 8px solid transparent;
-    border-top: 8px solid transparent;
-    display: block;
-    height: 0;
-    right: -7px;
-    position: absolute;
-    top: 13px;
-    width: 0;
+    // padding-left: 40px;
 }
 
 
@@ -261,8 +165,8 @@ p {
 
 h6, h5 {
   color: #1D3557;
-  text-align: left;
-  padding-left: 10px;
+  // text-align: left;
+  // padding-left: 10px;
 }
 
 
