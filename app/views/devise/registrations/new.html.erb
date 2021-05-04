@@ -4,7 +4,7 @@
       <div class="col-6 col-6">
         <h2>Sign up</h2>
 
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name, :goal => params[:goal])) do |f| %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
@@ -30,14 +30,7 @@
                         start_year: 1920,
                         end_year: 2002,
                         input_html: {type: :date},
-                        label: 'Date of birth',
-                        placeholder: '21.04.1986' %>
-            <%#= f.input :gender,
-                        as: :radio_buttons,
-                        collection: ['female', 'male', 'rather not say'] %>
-            <%#= f.collection_radio_buttons(:gender, [['Male', 'boy'], ['Female', 'woman'], ['Rather not say', 'no_gender']], :first, :last, :item_wrapper_class => 'horizontal') do |gender| %>
-                        <%#= gender.label { image_tag("#{gender.text}.png") + gender.radio_button  } %>
-                        <%# end %>
+                        label: 'Date of birth' %>
             <%= f.input :gender,
                         as: :radio_buttons,
                         collection_wrapper_tag: 'div',
@@ -62,7 +55,6 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
-            <%= f.hidden_field :goals, :value => params[:goal] %>
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Sign up", class: "btn btn" %>
