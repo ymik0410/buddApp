@@ -155,7 +155,7 @@
                   <% if @user.buddy.present? %>
                     <h6><strong>Country: </strong>
                     <% if @user.buddy.country.present? %>
-                      <%= @user.buddy.country  %>
+                      <%= @user.buddy.country.tr('A-Z', '🇦-🇿') %>
                     <% else %>
                       <%= "Not available" %>
                     <% end %></h6>
