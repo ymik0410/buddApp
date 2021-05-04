@@ -4,6 +4,10 @@
       <div class="form_border">
         <h2>Let's set your profile</h2>
         <p id="left">to help your buddy get to know a little about you</p>
+        <h5>You've chosen this goal:</h5>
+        <div class="mark-red-bordered">
+          <%= Goal.find(params[:goal_id]).name.upcase %>
+        </div>
         <%= render "form", user: @user %>
       </div>
     </div>
