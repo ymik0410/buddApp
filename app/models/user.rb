@@ -18,6 +18,34 @@ class User < ApplicationRecord
     end
   end
 
+  def streak
+    @streak_count = 0
+    today = Time.now.to_date
+
+    dates_array = self.daily_goals.map do |daily_goal|
+      daily_goal.created_at.to_date
+    end
+
+    unique_dates = dates_array.uniq
+
+    unique_dates.reduce(today) do |memo, date|
+      yesterday = memo.yesterday.to_date
+      if date == yesterday || date == today
+        @streak_count += 1
+        memo = date
+      end
+    end
+    @streak_count
+  end
+
+  def longest_streak
+    streaks = []
+    streaks << @streak_count
+    longest_streak = streaks.max
+
+    return longest_streak
+  end
+
   def buddy
     if self.buddyships.empty?
       return nil
