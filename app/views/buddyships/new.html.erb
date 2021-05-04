@@ -1,24 +1,32 @@
-<div class='container-buddyship mx-auto mt-5 col-md-10 mt-100'>
+<div class='container-buddyship-new mx-auto mt-5 col-md-10 mt-100'>
     <div class="header-buddyship">
-        <div class="title-buddyship">We found 3 best buddymatches for you!</div>
+        <div class="title-buddyship-new">We found 3 best buddymatches for you!</div>
     </div>
 
     <div class="row" style="justify-content: center">
         <% @same_goal_available.take(3).each do |buddy| %>
-        <div class="card-buddyship col-md-3 mt-100">
+        <div class="card-buddyship-new col-md-3 mt-100">
             <div class="card-content">
-                <div class="card-body card-body-buddy p-0">
-                    <div class="profile-buddyship p-4"> <img src="https://i.imgur.com/J6l19aF.jpg"> </div>
-                    <div class="card-title buddyship"> <%= buddy.username %> </div>
-                    <div class="card-title buddyship"> <%= buddy.country %> </div>
-                    <div class="card-title buddyship"> <%= buddy.current_goal.name %> </div>
+                <div class="card-body buddyship-new">
+                    <div class="profile-buddyship-new">
+                    <% if buddy.image.attached? %>
+                      <%= cl_image_tag @user.image.key, class: "avatar-bordered" %>
+                    <% elsif buddy.photo.present? %>
+                      <%= image_tag @user.photo, class: "avatar-bordered" %>
+                    <% else %>
+                      <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
+                    <% end %>
+                    </div>
+                    <div class="card-title buddyship-new"> <%= buddy.username %> </div>
+                    <div class="card-title buddyship-new"> <%= buddy.country %> </div>
+                    <div class="card-title buddyship-new"> <%= buddy.current_goal.name %> </div>
                     <div class="card-subtitle">
-                        <p> <small class="text-muted"> <%= buddy.goal_description %> </small> </p>
+                      <p> <small class="text-muted"> <%= buddy.goal_description %> </small> </p>
                     </div>
                 </div>
             </div>
 
-            <div class="d-flex align-items-end btn btn-buddyship" id="buddy"><%= link_to "Choose", buddyships_path(buddy: buddy.id), method: "POST" %></div>
+            <div class="btn btn" id="buddy"><%= link_to "Choose" , buddyships_path(buddy: buddy.id), method: "POST" %></div>
       </div>
      <% end %>
     </div>
