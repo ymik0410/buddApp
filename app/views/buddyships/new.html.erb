@@ -1,33 +1,26 @@
-<div class="container">
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
-  <div class="buddy-new">
-    <!-- <div class="container"> -->
-      <div class="row">
-        <div class="bio-graph-heading-buddyships">
+<div class='container-buddyship mx-auto mt-5 col-md-10 mt-100'>
+    <div class="header-buddyship">
+        <div class="title-buddyship">We found 3 best buddymatches for you!</div>
+    </div>
 
-          <h1>We found 3 best buddymatches for you!</h1>
-        </div>
-        <!-- <h2>Choose your buddy now</h2> -->
+    <div class="row" style="justify-content: center">
         <% @same_goal_available.take(3).each do |buddy| %>
-        <div class="col-md-4">
-            <div class="card user-card buddyships">
-                    <h5 id="name">
-                      <%= link_to buddy.username, user_path(current_user) %>
-                    </h5>
-                <div class="card-block buddyships">
-                    <p class="text-muted-buddyships"><%= buddy.country %></p>
-                    <hr>
-                    <p class="text-muted-buddyships m-t-15"><%= buddy.current_goal.name %></p>
-
-                    <hr>
-                    <p class="text-muted-buddyships m-t-15"><%= buddy.goal_description %></p>
-                    <hr>
-                    <div class="btn btn" id="buddy"><%= link_to "Choose your buddy", buddyships_path(buddy: buddy.id), method: "POST" %></div>
+        <div class="card-buddyship col-md-3 mt-100">
+            <div class="card-content">
+                <div class="card-body p-0">
+                    <div class="profile-buddyship p-4"> <img src="https://i.imgur.com/J6l19aF.jpg"> </div>
+                    <div class="card-title buddyship-name"> <%= link_to buddy.username, user_path(current_user) %> </div>
+                    <div class="card-title"> <%= buddy.country %> </div>
+                    <div class="card-title"> <%= buddy.current_goal.name %> </div>
+                    <div class="card-subtitle">
+                        <p> <small class="text-muted"> <%= buddy.goal_description %> </small> </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <% end %>
+
+            <div class="d-flex align-items-end btn btn-buddyship" id="buddy"><%= link_to "Choose your buddy", buddyships_path(buddy: buddy.id), method: "POST" %></div>
       </div>
-    <!-- </div> -->
-  </div>
+     <% end %>
+    </div>
 </div>
+        
