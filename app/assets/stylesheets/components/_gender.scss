@@ -32,14 +32,14 @@
 
 
 #user_gender_female + label {
-  background-image: url(woman.png);
+  background-image: image-url("woman.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
 }
 
 #user_gender_male + label {
-  background-image: url(boy.png);
+  background-image: image-url("boy.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
@@ -47,7 +47,7 @@
 
 
 #user_gender_not_say + label {
-  background-image: url(no_gender.png);
+  background-image: image-url("no_gender.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
