@@ -18,6 +18,9 @@ class DailyGoalsController < ApplicationController
       @daily_goal.done = false
     else
       @daily_goal.done = true
+      @user = current_user
+      @user.streak += 1
+      @user.save
     end
       @daily_goal.save
       redirect_to user_path(current_user)
