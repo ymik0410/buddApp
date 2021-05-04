@@ -33,8 +33,10 @@
                       <%= "Not available" %>
                     <% end %></h6>
                   </div>
+                  <br>
+                  <br>
                   <% if current_user == @user %>
-                  <div class="btn btn-1"><%= link_to "Edit profile", edit_user_path(current_user) %></div>
+                  <div class="btn-profile-less"><%= link_to "Edit profile", edit_user_path(current_user) %></div>
                   <% end %>
                 </div>
               </div>
@@ -45,26 +47,46 @@
             <div class="card border-profile text-center">
 
               <div class="card-body card-body-profile">
-                <h1 class="card-title pb-0"><%= @user.histories.last.goal.name %></h1>
+                <h1 class="card-title"><%= @user.histories.last.goal.name %></h1>
                  <% if @user.buddy.present? %>
                 <h2><%= image_tag "hands.png", class: "hello", alt:"" %> with <%= link_to @user.buddy.username, user_path(@user.buddy.id), class: "btn-profile" %></h2>
                   <% end %>
               </div>
               <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link active-1 btn-profile-blue" id="nav-achievments-tab" data-toggle="tab" href="#nav-achievments" role="tab" aria-controls="nav-achievments" aria-selected="true">Achievements</a>
+                  <a class="nav-item nav-link active-1 btn-profile-blue" id="nav-achievments-tab" data-toggle="tab" href="#nav-achievments" role="tab" aria-controls="nav-achievments" aria-selected="true">Daily goals</a>
                   <a class="nav-item nav-link btn-profile-blue" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="false">Bio</a>
                   <a class="nav-item nav-link btn-profile-blue" id="nav-motivation-tab" data-toggle="tab" href="#nav-motivation" role="tab" aria-controls="nav-motivation" aria-selected="false">Motivation</a>
                   <a class="nav-item nav-link btn-profile-blue" id="nav-history-tab" data-toggle="tab" href="#nav-history" role="tab" aria-controls="nav-history" aria-selected="false">History</a>
                 </div>
               </nav>
               <div class="tab-content pt-3 pb-2" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-achievments" role="tabpanel" aria-labelledby="nav-achievments-tab">Mini daily goals + tick boxes</div>
+                <div class="tab-pane fade show active" id="nav-achievments" role="tabpanel" aria-labelledby="nav-achievments-tab">
+                  <% @daily_goals.each do |goal| %>
+                    <div class="d-flex justify-content-start pl-5">
+                      <%= link_to check_box_tag 'done',  controller: "daily_goals", action: "edit" %>
+                      <p><%= goal.name %>
+                      <%= link_to(content_tag(:i, nil, class: "far fa-trash-alt pl-2 bin"), method: :delete, data: { confirm: 'Are you sure?' }) %>
+
+                      </p>
+                    </div>
+                  <% end %>
+                  <div class="container-profile">
+                    <%= simple_form_for @daily_goal do |f| %>
+                      <h6><%= f.input :name, label: "Add a new daily goal", class: "" %></h6>
+                      <%= f.submit class: "btn btn" %>
+                    <% end %>
+                  </div>
+                </div>
                 <div class="tab-pane fade" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab"><p><%= @user.introduction %></p></div>
                 <div class="tab-pane fade" id="nav-motivation" role="tabpanel" aria-labelledby="nav-motivation-tab"><p><%= @user.goal_description %></p></div>
-                <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab"><h4><%= @user.histories.last.goal.name %></h4>
-                                                <p>Started: <%= @user.histories.last.start_date %></p>
-                                                <p>Achieved: In progress</p></div>
+                <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab"><h4>
+                  <% @user.histories.each do |history| %></h4>
+                    <h6 class="text-center"><%= history.goal.name %></h6>
+                    <p>Started: <%= history.start_date %></p>
+                      <p>Achieved: <%= history.end_date %></p>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
@@ -120,9 +142,11 @@
                       <%= "Not available" %>
                     <% end %></h6>
                   <% end %>
-                   <% if @user.buddy.present? %>
-                 <h6 class="card-text d-flex align-items-center"><div class="row"><%= image_tag "hello.png", class: "hello pr-3", alt:"" %> </div> <%= link_to 'SHARE SOME MOTIVATION', buddyship_path(@user.buddyships.last), class: "btn-profile" %></h6>
+                  <br>
+                  <% if @user.buddy.present? %>
+                 <h6 class="card-text d-flex align-items-center pr-3"><div class="row d-flex align-items-center"><%= image_tag "hello.png", class: "hello pr-3", alt:"" %> </div> <%= link_to 'SHARE SOME MOTIVATION', buddyship_path(@user.buddyships.last), class: "btn-profile" %></h6>
                  <% end %>
+               </div>
 
                   </div>
                 </div>
