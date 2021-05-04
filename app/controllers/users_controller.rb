@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @daily_goal = DailyGoal.new
+    @daily_goals = DailyGoal.all.order("created_at DESC")
   end
 
   private
