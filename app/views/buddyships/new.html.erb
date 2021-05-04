@@ -1,33 +1,46 @@
 <div class='container-buddyship-new mx-auto mt-5 col-md-10 mt-100'>
-    <div class="header-buddyship">
-        <div class="title-buddyship-new">We found 3 best buddymatches for you!</div>
-    </div>
-    <div class="btn-profile-less pt-3"><%= link_to "Go back", user_path(current_user) %></div>
 
-    <div class="row" style="justify-content: center">
+    <!-- Header -->
+    <div class="header-buddyship">
+        <div class="title-buddyship-new">
+          We found <%= @same_goal_available.take(3).size %>
+          best buddymatches for you!
+        </div>
+    </div>
+    <div class="btn-profile-less pt-3">
+      <%= link_to "Go back", user_path(current_user) %>
+    </div>
+
+    <!-- Buddy cards -->
+    <div class="card-deck">
         <% @same_goal_available.take(3).each do |buddy| %>
-        <div class="card-buddyship-new col-md-3 mt-100">
+        <div class="card col-md-3 mt-100 text-center">
             <div class="card-content">
-                <div class="card-body buddyship-new">
+                <div class="card-body">
                     <div class="profile-buddyship-new">
-                    <% if buddy.image.attached? %>
-                      <%= cl_image_tag @user.image.key, class: "avatar-bordered" %>
-                    <% elsif buddy.photo.present? %>
-                      <%= image_tag @user.photo, class: "avatar-bordered" %>
-                    <% else %>
-                      <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
-                    <% end %>
+                      <!-- Avatar picture -->
+                      <% if buddy.image.attached? %>
+                        <%= cl_image_tag @user.image.key, class: "avatar-bordered" %>
+                      <% elsif buddy.photo.present? %>
+                        <%= image_tag @user.photo, class: "avatar-bordered" %>
+                      <% else %>
+                        <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
+                      <% end %>
                     </div>
-                    <div class="card-title buddyship-new"> <%= buddy.username %> </div>
+                    <!-- Profile description -->
+                    <h2> <%= buddy.username %> </h2>
+                    <div class="card-title buddyship-goal"> <%= buddy.current_goal.name %> </div>
                     <div class="card-title buddyship-new"> <%= buddy.country %> </div>
-                    <div class="card-title buddyship-new"> <%= buddy.current_goal.name %> </div>
-                    <div class="card-subtitle">
-                      <p> <small class="text-muted"> <%= buddy.goal_description %> </small> </p>
-                    </div>
+                    <p class="text-muted"> <%= buddy.goal_description %> </p>
+                </div>
+
+                <!-- Choose button -->
+                <div class="card-footer">
+                  <div class="btn btn">
+                    <%= link_to "Choose #{buddy.username}" , buddyships_path(buddy: buddy.id), method: "POST" %>
+                  </div>
                 </div>
             </div>
-
-            <div class="btn btn" id="buddy"><%= link_to "Choose" , buddyships_path(buddy: buddy.id), method: "POST" %></div>
       </div>
      <% end %>
     </div>
