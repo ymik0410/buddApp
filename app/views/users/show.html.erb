@@ -16,7 +16,12 @@
                 <h2 class="pt-3"><%= @user.username %></h2>
                 <h6><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></h6>
                 <h6><strong>Joined: </strong> <%= @user.created_at.strftime("%B %d, %Y") %></h6>
-                <h6><strong>Current streak:</strong> <%= @user.streak %></h6>
+                <h6><strong>Current streak:</strong>
+                <% if @user.streak.present? %>
+                  <%= @user.streak %></h6>
+                <% else %>
+                  <%= @user.streakk %></h6>
+                <% end %>
                 <h6><strong>Longest streak: </strong> <%= @user.longest_streak %></h6>
                 <br>
                 <h6><strong>Date of birth: </strong>
