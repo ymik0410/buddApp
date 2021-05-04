@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     if current_user.current_goal.present?
       user_path(current_user)
     else
-      edit_user_path(current_user)
+      goals_path
     end
   end
 end
