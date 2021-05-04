@@ -9,7 +9,7 @@
           <div class="card-block">
             <p class="text-muted-goals"><%= goal.description %></p>
 
-          <div class="btn btn"><%= link_to "Choose this goal",  new_user_registration_path(:goal => goal) %></div>
+          <div class="btn btn"><%= link_to "Choose this goal",  edit_user_path(current_user, goal_id: goal.id) %></div>
         </div>
       </div>
       </div>
