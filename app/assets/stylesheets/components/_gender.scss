@@ -46,24 +46,24 @@
 }
 
 
-#user_gender_not_say + label {
+#user_gender_rather_not_say + label {
   background-image: image-url("no_gender.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
+  padding-right: 54px;
+  padding-bottom: 13px;
 }
 
-#snippet_category_javascript:checked + label {
-  background-color: #FFC65A;
-  border-color: #FFC65A;
+#user_gender_male:checked + label {
+  border-color: #1D3557;
 }
 
 
-#snippet_category_css + label {
-  color: #62DDF5;
+#user_gender_rather_not_say:checked + label {
+  border-color: #1D3557;
 }
 
-#snippet_category_css:checked + label {
-  background-color: #62DDF5;
-  border-color: #62DDF5;
+#user_gender_female:checked + label {
+  border-color: #1D3557;
 }
