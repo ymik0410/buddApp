@@ -16,8 +16,8 @@
                 <h2 class="pt-2"><%= @user.username %></h2>
                 <h6><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></h6>
                 <h6><strong>Joined: </strong> <%= @user.created_at.strftime("%B %d, %Y") %></h6>
-                <h6><strong>Current streak: </strong> <%= (Date.today.to_date - @user.created_at.to_date).to_i %></h6>
-                <h6><strong>Longest streak: </strong> <%= (Date.today.to_date - @user.created_at.to_date).to_i %></h6>
+                <h6><strong>Current streak:</strong> <%= @user.streak %></h6>
+                <h6><strong>Longest streak: </strong> <%= @user.longest_streak %></h6>
                 <br>
                 <h6><strong>Date of birth: </strong>
                   <% if @user.date_of_birth.present? %>
@@ -137,10 +137,10 @@
                     <h6><strong>Joined: </strong> <%= @user.buddy.created_at.strftime("%B %d, %Y") %></h6>
                   <% end %>
                   <% if @user.buddy.present? %>
-                    <h6><strong>Current streak: </strong> <%= (Date.today.to_date - @user.buddy.created_at.to_date).to_i %></h6>
+                    <h6><strong>Current streak: </strong> <%= @user.buddy.streak %></h6>
                   <% end %>
                   <% if @user.buddy.present? %>
-                    <h6><strong>Longest streak: </strong> <%= (Date.today.to_date - @user.created_at.to_date).to_i %></h6>
+                    <h6><strong>Longest streak: </strong> <%= @user.buddy.longest_streak %></h6>
                   <% end %>
                   <br>
                   <% if @user.buddy.present? %>
