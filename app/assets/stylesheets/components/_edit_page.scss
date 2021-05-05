@@ -3,3 +3,10 @@
   margin-bottom: 2rem;
 }
 
+.mark-red-bordered {
+  text-align: center;
+  padding: 10px;
+  border: solid $darkblue 0.5px;
+  border-radius: 3px;
+  color: $buttonsred;
+}
