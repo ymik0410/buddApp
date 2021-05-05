@@ -11,3 +11,15 @@
   color: $buttonsred;
   margin: 16px 0px;
 }
+
+.small-grey-link {
+  margin-bottom: 10px;
+  text-align: end;
+
+    a {
+  text-decoration: none;
+  color: grey;
+  font-size: 12px;
+  }
+
+}

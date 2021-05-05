@@ -8,6 +8,7 @@
         <div class="mark-red-bordered">
           <%= Goal.find(params[:goal_id]).name.upcase %>
         </div>
+        <div class="small-grey-link"><%= link_to "Go back", goals_path %></div>
         <%= render "form", user: @user %>
       </div>
     </div>
