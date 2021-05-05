@@ -1,8 +1,28 @@
 <%= simple_form_for(@user) do |f| %>
-  <%= f.input :goals, as: :radio_buttons, collection: Goal.all, checked: params[:goal_id] %>
-  <%= f.input :goal_description, label: 'Why is it important for you?', placeholder: 'I want to achieve this goal because ...', :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'} %>
+  <div hidden>
+    <%= f.input :goals,
+                as: :radio_buttons,
+                collection: Goal.all,
+                checked: params[:goal_id] %>
+  </div>
+  <%= f.input :goal_description,
+              label: 'Why is it important for you?',
+              placeholder: 'I want to achieve this goal because ...',
+              :as => :text,
+              :input_html => { :rows => 7 , :style => 'width: 100%'},
+              autofocus: true %>
   <%= f.input :introduction, label: 'About you', placeholder: 'Some words about yourself', :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'} %>
-  <%= f.input :image, as: :file, label: 'Your avatar' %>
+  <%= f.input :country,
+              :as => :string,
+              required: false,
+              label: 'Your country',
+              placeholder: 'e.g. France' %>
+  <%= f.input :language,
+              label: 'Your main language',
+              placeholder: 'e.g. English' %>
+  <%= f.input :image,
+              as: :file,
+              label: 'Your avatar' %>
     <% if current_user.buddy.present? %>
       <%= f.submit "Save changes", class: "btn btn" %>
     <% else %>

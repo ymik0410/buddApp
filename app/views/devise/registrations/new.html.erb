@@ -18,13 +18,16 @@
                         input_html: { autocomplete: "Your last name", :placeholder => 'eg. Smith' }%>
             <%= f.input :username,
                         required: true,
+                        autofocus:true,
                         label: 'Username',
                         placeholder: 'e.g. MorningStar' %>
+            
             <%= f.input :country,
-                        :as => :string,
+                        as: :country,
                         required: false,
                         autofocus: true,
                         input_html: { autocomplete: "Choose your country", :placeholder => 'eg. France' }%>
+
             <%= f.input :date_of_birth,
                         as: :string,
                         start_year: 1920,
