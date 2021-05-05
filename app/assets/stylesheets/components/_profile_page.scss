@@ -75,6 +75,16 @@ height: 90%;
   }
 }
 
+.btn-profile-blue a {
+  color: #1D3557;
+  text-decoration: none;
+
+  &:hover {
+    color: #E63946;
+    text-decoration: none;
+  }
+}
+
 .btn-profile-less a {
   color: #E63946;
   border: 1px solid #E63946;
@@ -105,6 +115,17 @@ height: 90%;
   &:hover {
     opacity: 1;
     color: #423f3f;
+  }
+}
+
+.edit a {
+  color: #808080a3;
+  text-decoration: none;
+  width: 10px;
+
+  &:hover {
+    opacity: 1;
+    color: #E63946;
   }
 }
 
@@ -147,7 +168,10 @@ p {
     font-size: 15px;
     // padding-left: 40px;
 }
-
+.streak {
+  color: #E63946;
+  font-weight: bold;
+}
 
 
 @media (min-width: 768px){

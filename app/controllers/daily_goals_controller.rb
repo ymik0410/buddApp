@@ -18,8 +18,25 @@ class DailyGoalsController < ApplicationController
     else
       @daily_goal.done = true
       @user = current_user
-      @user.streak += 1
+      if @user.streak == @user.longest_streak
+        @user.longest_streak += 1
+        @user.streak += 1
+      elsif @user.streak < @user.longest_streak
+        @user.streak += 1
+      # else @user.streak < @user.longest_streak
+      #   @user.longest_streak += 1
+      end
+
+      # @user.longest_streak = 0
+
+      # @user.daily_goals.each do |goal|
+      #   if goal.done
+      #     @user.longest_streak += 1
+      #   end
+      # end
+
       @user.save
+
     end
       @daily_goal.save
       redirect_to user_path(current_user)

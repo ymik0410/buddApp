@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col">
       <div class="card border-profile card-profile text-center">
+
+        <!-- My profile -->
+
         <div class="card-body">
           <div class="panel">
             <div class="user-heading round">
@@ -13,25 +16,25 @@
                 <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
               <% end %>
 
-                <h2 class="pt-3"><%= @user.username %></h2>
-                <h6><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></h6>
-                <h6><strong>Joined: </strong> <%= @user.created_at.strftime("%B %d, %Y") %></h6>
-                <h6><strong>Current streak:</strong>
-                <% if @user.streak.present? %>
-                  <%= @user.streak %></h6>
-                <% else %>
-                  <%= @user.streakk %></h6>
-                <% end %>
-                <h6><strong>Longest streak: </strong> <%= @user.longest_streak %></h6>
+
+                <h2 class="pt-3 pb-5 edit"><%= @user.username %>
+                 <%= link_to edit_user_path(current_user) do %>
+                        <i class="fas fa-user-edit fa-xs"></i>
+                      <% end %>
+                </h2>
+                <h6 class="text-center border-top pt-2 streak"><strong>Current streak:</strong> <%= @user.streak%></h6>
+                <h6 class="text-center border-bottom pb-2 streak"><strong>Longest streak: </strong> <%= @user.longest_streak %></h6>
+
                 <br>
-                <h6><strong>Date of birth: </strong>
+                <h6 class="text-center"><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></h6>
+                <h6 class="text-center"><strong>Joined: </strong> <%= @user.created_at.strftime("%B %d, %Y") %></h6>
+                <h6 class="text-center"><strong>Date of birth: </strong>
                   <% if @user.date_of_birth.present? %>
                     <%= @user.date_of_birth.strftime("%d %B, %Y") %>
                   <% else %>
                     <%= "Not available" %>
                   <% end %></h6>
-                  <br>
-                  <h6><strong>Country: </strong>
+                  <h6 class="text-center"><strong>Country: </strong>
                     <% if @user.country.present? %>
                       <%= @user.country  %>
                     <% else %>
@@ -41,18 +44,21 @@
                   <br>
                   <br>
                   <% if current_user == @user %>
-                  <div class="btn-profile-less"><%= link_to "Edit profile", edit_user_path(current_user) %></div>
+                  <div class="btn-profile-less pt-2"><%= link_to "Remove buddy", new_buddyship_path %></div>
                   <% end %>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- middle interactve board -->
+
           <div class="col-5">
             <div class="card border-profile text-center">
 
               <div class="card-body card-body-profile">
                 <h1 class="card-title"><%= @user.histories.last.goal.name %></h1>
+                <div class="btn-profile-blue"><%= link_to "Change my goal", goals_path(current_user) %></div>
                  <% if @user.buddy.present? %>
                 <h2><%= image_tag "hands.png", class: "hello", alt:"" %> with <%= link_to @user.buddy.username, user_path(@user.buddy.id), class: "btn-profile" %></h2>
                   <% end %>
@@ -113,6 +119,9 @@
               </div>
             </div>
           </div>
+
+          <!-- Buddy profile -->
+
           <div class="col">
            <div class="card border-profile card-profile text-center">
 
@@ -130,7 +139,8 @@
                   <% end %>
 
                   <% if @user.buddy.present? %>
-                    <h2 class="pt-3"><%= @user.buddy.username %></h2>
+                    <h2 class="pt-3 pb-0"><%= @user.buddy.username %></h2>
+                    <div class="btn-profile-blue pt-0 pb-3"><%= link_to "Find another buddy", new_buddyship_path(current_user) %></div>
                   <% else %>
                   <br>
                     <h1>No buddy yet</h1>
@@ -139,41 +149,38 @@
                     <div class="btn"><%= link_to "Find your buddy", new_buddyship_path %></div>
                   <% end %>
                   <% if @user.buddy.present? %>
-                    <h6><strong>Name:</strong> <%= @user.buddy.first_name %> <%= @user.buddy.last_name %></h6>
+                    <h6 class="text-center border-top pt-2 streak"><strong>Current streak: </strong> <%= @user.buddy.streak %></h6>
                   <% end %>
                   <% if @user.buddy.present? %>
-                    <h6><strong>Joined: </strong> <%= @user.buddy.created_at.strftime("%B %d, %Y") %></h6>
-                  <% end %>
-                  <% if @user.buddy.present? %>
-                    <h6><strong>Current streak: </strong> <%= @user.buddy.streak %></h6>
-                  <% end %>
-                  <% if @user.buddy.present? %>
-                    <h6><strong>Longest streak: </strong> <%= @user.buddy.longest_streak %></h6>
+                    <h6 class="text-center border-bottom pb-2 streak"><strong>Longest streak: </strong> <%= @user.buddy.longest_streak %></h6>
                   <% end %>
                   <br>
                   <% if @user.buddy.present? %>
-                    <h6><strong>Date of birth: </strong>
+                    <h6 class="text-center"><strong>Name:</strong> <%= @user.buddy.first_name %> <%= @user.buddy.last_name %></h6>
+                  <% end %>
+                  <% if @user.buddy.present? %>
+                    <h6 class="text-center"><strong>Joined: </strong> <%= @user.buddy.created_at.strftime("%B %d, %Y") %></h6>
+                  <% end %>
+                  <% if @user.buddy.present? %>
+                    <h6 class="text-center"><strong>Date of birth: </strong>
                     <% if @user.buddy.date_of_birth.present? %>
                       <%= @user.buddy.date_of_birth.strftime("%d %B, %Y") %>
                     <% else %>
                       <%= "Not available" %>
                     <% end %></h6>
                   <% end %>
-                  <br>
                   <% if @user.buddy.present? %>
-                    <h6><strong>Country: </strong>
+                    <h6 class="text-center"><strong>Country: </strong>
                     <% if @user.buddy.country.present? %>
                       <%= @user.buddy.country %>
                     <% else %>
                       <%= "Not available" %>
                     <% end %></h6>
                   <% end %>
-                  <br>
                   <% if @user.buddy.present? %>
-                 <h6 class="card-text d-flex align-items-center pr-3"><div class="row d-flex align-items-center"><%= image_tag "hello.png", class: "hello pr-3", alt:"" %> </div> <%= link_to 'SHARE SOME MOTIVATION', buddyship_path(@user.buddyships.last), class: "btn-profile" %></h6>
+                 <h6 class="card-text d-flex align-items-center pl-3"><div class="row d-flex align-items-center"><%= image_tag "hello.png", class: "hello pr-3 pt-4", alt:"" %> </div> <%= link_to 'SHARE SOME MOTIVATION', buddyship_path(@user.buddyships.last), class: "btn-profile pt-4" %></h6>
                  <% end %>
                </div>
-               <div class="btn-profile-less pt-3"><%= link_to "Find another buddy", new_buddyship_path %></div>
 
                   </div>
                 </div>

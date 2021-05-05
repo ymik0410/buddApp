@@ -1,12 +1,8 @@
-<div class="wrapper login">
-  <div class="container mt-3">
-    <div class="row justify-content-center">
-      <div class="col-6">
 
-        <div class="bio-graph-heading-buddyships">
-          <h1>Welcome to your accountability space,</h1>
-          <h1><%= @buddyship.user1.username %> and <%= @buddyship.user2.username %></h1>
-        </div>
+<div class="container">
+<div class="row">
+    <div class="col-sm">
+      One of three columns
 
         <div id="messages" data-buddyship-id="<%= @buddyship.id %>">
           <% @buddyship.messages.each do |message| %>
@@ -21,5 +17,9 @@
       </div>
     </div>
   </div>
+</div>
+
+    </div>
+
 </div>
 
