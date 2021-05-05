@@ -6,11 +6,11 @@
         <% if @buddyship.user2.image.attached? %>
           <%= cl_image_tag @buddyship.user2.image.key, class: "avatar avatar-chat" %>
         <% elsif @buddyship.user2.photo.present? %>
-          <%= image_tag @user.photo, class: "avatar avatar-chat" %>
+          <%= image_tag @buddyship.user2.photo, class: "avatar avatar-chat" %>
         <% else %>
           <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar avatar-chat" %>
         <% end %>
-        <h5 class="pl-2">Conversation with <%= @buddyship.user1.username %></h5>
+        <h5 class="pl-2">Conversation with <%= @buddyship.user2.username %></h5>
       </div>
     </div>
   </div>

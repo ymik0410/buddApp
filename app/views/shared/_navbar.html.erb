@@ -21,7 +21,7 @@
           <% if current_user.image.attached? %>
             <%= cl_image_tag current_user.image.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
            <% elsif current_user.photo.present? %>
-                <%= image_tag @user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+                <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
             <% else %>
                 <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar dropdown-toggle" , id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% end %>
