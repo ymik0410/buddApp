@@ -13,7 +13,7 @@
               autofocus: true %>
   <%= f.input :introduction, label: 'About you', placeholder: 'Some words about yourself', :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'} %>
   <%= f.input :country,
-              :as => :string,
+              as: :country,
               required: false,
               label: 'Your country',
               placeholder: 'e.g. France' %>
