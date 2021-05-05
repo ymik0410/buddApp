@@ -21,9 +21,9 @@
                     <div class="profile-buddyship-new">
                       <!-- Avatar picture -->
                       <% if buddy.image.attached? %>
-                        <%= cl_image_tag @user.image.key, class: "avatar-bordered" %>
+                        <%= cl_image_tag buddy.image.key, class: "avatar-bordered" %>
                       <% elsif buddy.photo.present? %>
-                        <%= image_tag @user.photo, class: "avatar-bordered" %>
+                        <%= image_tag buddy.photo, class: "avatar-bordered" %>
                       <% else %>
                         <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
                       <% end %>
