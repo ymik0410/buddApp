@@ -14,17 +14,17 @@
       </div>
     </div>
   </div>
-
-  <div id="messages" data-buddyship-id="<%= @buddyship.id %>">
-    <% @buddyship.messages.each do |message| %>
-      <% if message.user == current_user %>
-        <div class="d-flex justify-content-end"><%= render 'messages/message', message: message %></div>
-      <% else %>
-        <div class="user1"><%= render 'messages/message', message: message %></div>
+  <div class="scrollbar">
+    <div id="messages" data-buddyship-id="<%= @buddyship.id %>">
+      <% @buddyship.messages.each do |message| %>
+        <% if message.user == current_user %>
+          <div class="d-flex justify-content-end"><%= render 'messages/message', message: message %></div>
+        <% else %>
+          <div class="user1"><%= render 'messages/message', message: message %></div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-
   <%= simple_form_for [ @buddyship, @message ], remote: true do |f| %>
     <%= f.input :content, label: false, placeholder: "Say hello and send some motivation to your buddy" %>
       <%= f.submit "Send", class: "btn" %>
