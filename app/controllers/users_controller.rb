@@ -7,11 +7,8 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     History.create(user: @user, goal_id: params["user"]["goals"], start_date: Date.today)
-    # if current_user.buddy.present?
-      redirect_to user_path(current_user)
-    # else
-      # redirect_to new_buddyship_path
-    # end
+
+    redirect_to user_path(current_user)
   end
 
   def show
