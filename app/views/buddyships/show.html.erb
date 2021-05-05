@@ -1,33 +1,37 @@
-
-<div class="container-chat">
+<div class="wrapper login">
+  <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-6">
  <!--  <div class="row"> -->
-  <div class="card-body">
-    <div class="panel">
-      <div class="chat-title">
-        <% if @buddyship.user2.image.attached? %>
-          <%= cl_image_tag @buddyship.user2.image.key, class: "avatar dropdown-toggle" %>
-        <% elsif @buddyship.user2.photo.present? %>
-          <%= image_tag @user.photo, class: "avatar dropdown-toggle" %>
-        <% else %>
-          <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar dropdown-toggle" %>
-          <h5> Conversation with <%= @buddyship.user2.username %> </h5>
+        <div class="card-body">
+          <div class="panel">
+            <div class="chat-title p-4">
+              <% if @buddyship.user2.image.attached? %>
+                <%= cl_image_tag buddy.image.key, class: "avatar dropdown-toggle" %>
+              <% elsif @buddyship.user2.photo.present? %>
+                <%= image_tag @user.photo, class: "avatar dropdown-toggle" %>
+              <% else %>
+                <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar dropdown-toggle" %>
+              <h5 class="align-center pt-3"> Conversation with <%= @buddyship.user2.username %> </h5>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div id="messages" data-buddyship-id="<%= @buddyship.id %>">
+          <% @buddyship.messages.each do |message| %>
+            <%= render 'messages/message', message: message %>
+          <% end %>
+        </div>
+
+        <%= simple_form_for [ @buddyship, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Say hello, send some motivation to your buddy" %>
+        <%= f.submit "Send", class: "btn" %>
         <% end %>
       </div>
+  <!-- </div> -->
     </div>
   </div>
-
-  <div id="messages" data-buddyship-id="<%= @buddyship.id %>">
-    <% @buddyship.messages.each do |message| %>
-      <%= render 'messages/message', message: message %>
-    <% end %>
-  </div>
-
-  <%= simple_form_for [ @buddyship, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Say hello and send some motivation to your buddy" %>
-      <%= f.submit "Send", class: "btn" %>
-    <% end %>
-
-  <!-- </div> -->
 </div>
 
 
