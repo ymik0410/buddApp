@@ -23,18 +23,18 @@ marc = User.create(first_name: "Mark", username: "Santana", last_name: "Tchuchuc
 
 puts "users created"
 
-# 50.times do
-#   user = User.create!(
-#   username: Faker::Games::Heroes.specialty,
-#   country: Faker::Address.country,
-#   first_name: Faker::Name.first_name,
-#   last_name: Faker::Name.last_name,
-#   email: Faker::Internet.email,
-#   password: "123456",
-#   introduction: Faker::TvShows::TheExpanse.quote,
-#   goal_description: Faker::TvShows::Buffy.quote
-# )
-# end
+50.times do
+  user = User.create!(
+  username: Faker::Games::Heroes.specialty,
+  country: Faker::Address.country,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: "123456",
+  introduction: Faker::TvShows::TheExpanse.quote,
+  goal_description: Faker::TvShows::Buffy.quote
+)
+end
 
 Buddyship.create!(user1_id: santa.id, user2_id: juli.id)
 puts "buddyship created"
@@ -61,22 +61,22 @@ history3 = History.create!(user: user3, goal: goal3, start_date: Faker::Date.bet
 # history5 = History.create!(user: user2, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 # history6 = History.create!(user: user1, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 
-# 100.times do
-#   history = History.create!(
-#   user: User.all.shuffle.first,
-#   goal: Goal.all.shuffle.first,
-#   start_date: Faker::Date.between(from: 300.days.ago, to: Date.today),
-#   end_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
-#   )
-# end
+20.times do
+  history = History.create!(
+  user: User.all.shuffle.first,
+  goal: Goal.all.shuffle.first,
+  start_date: Faker::Date.between(from: 300.days.ago, to: Date.today),
+  end_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
+  )
+end
 
-# User.all.each do |user|
-#   history = History.create!(
-#   user: user,
-#   goal: Goal.all.shuffle.first,
-#   start_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
-#   )
-# end
+User.all.each do |user|
+  history = History.create!(
+  user: user,
+  goal: Goal.all.shuffle.first,
+  start_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
+  )
+end
 
 puts "Created #{Goal.count} goals."
 puts "Created #{User.count} users."
