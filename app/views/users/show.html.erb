@@ -85,9 +85,9 @@
                           <p><i class="far fa-square"></i></p>
                         <% end %>
                       <% end %>
-                      <p ><%= goal.name %>
+                      <p class="pl-4"><%= goal.name %>
                       <%= link_to daily_goal_path(goal), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                        <div class= "goal-links"><i class="far fa-trash-alt"></i></div>
+                        <div class= "goal-links"><i class="far fa-trash-alt pl-2"></i></div>
                       <% end %>
                       </p>
                     </div>
