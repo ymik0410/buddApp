@@ -10,14 +10,21 @@
               placeholder: 'I want to achieve this goal because ...',
               :as => :text,
               :input_html => { :rows => 7 , :style => 'width: 100%'},
-              autofocus: true %>
-  <%= f.input :introduction, label: 'About you', placeholder: 'Some words about yourself', :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'} %>
+              autofocus: true,
+              autocomplete: :off %>
+  <%= f.input :introduction,
+              label: 'About you',
+              placeholder: 'Some words about yourself',
+              :as => :text,
+              autocomplete: :off,
+              :input_html => { :rows => 7 , :style => 'width: 100%'} %>
   <%= f.input :country,
               as: :country,
               required: false,
               label: 'Your country',
               placeholder: 'e.g. France' %>
   <%= f.input :language,
+              autocomplete: :off,
               label: 'Your main language',
               placeholder: 'e.g. English' %>
   <%= f.input :image,

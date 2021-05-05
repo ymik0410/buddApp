@@ -11,14 +11,17 @@
             <%= f.input :first_name,
                         required: true,
                         autofocus: true,
+                        autocomplete: :off,
                         input_html: { autocomplete: "Your first name", :placeholder => 'eg. George' }%>
             <%= f.input :last_name,
                         required: true,
                         autofocus: true,
+                        autocomplete: :off,
                         input_html: { autocomplete: "Your last name", :placeholder => 'eg. Smith' }%>
             <%= f.input :username,
                         required: true,
                         autofocus:true,
+                        autocomplete: :off,
                         label: 'Username',
                         placeholder: 'e.g. MorningStar' %>
             <%= f.input :date_of_birth,
@@ -36,6 +39,7 @@
                         collection:["Female", "Male", "Rather not say"] %>
             <%= f.input :email,
                         required: true,
+                        autocomplete: :off,
                         autofocus: true,
                         input_html: { autocomplete: "email", :placeholder => 'eg. george.smith@gmail.com' }%>
             <%= f.input :password,
