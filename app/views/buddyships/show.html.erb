@@ -3,22 +3,26 @@
  <!--  <div class="row"> -->
   <div class="card-body">
     <div class="panel">
-      <div class="chat-title">
+      <div class="d-flex align-items-center chat-title pl-5 pt-3 pb-3">
         <% if @buddyship.user2.image.attached? %>
-          <%= cl_image_tag @buddyship.user2.image.key, class: "avatar dropdown-toggle" %>
+          <%= cl_image_tag @buddyship.user2.image.key, class: "avatar avatar-chat" %>
         <% elsif @buddyship.user2.photo.present? %>
-          <%= image_tag @user.photo, class: "avatar dropdown-toggle" %>
+          <%= image_tag @user.photo, class: "avatar avatar-chat" %>
         <% else %>
-          <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar dropdown-toggle" %>
-          <h5> Conversation with <%= @buddyship.user2.username %> </h5>
+          <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar avatar-chat" %>
         <% end %>
+        <h5 class="pl-2">Conversation with <%= @buddyship.user1.username %></h5>
       </div>
     </div>
   </div>
 
   <div id="messages" data-buddyship-id="<%= @buddyship.id %>">
     <% @buddyship.messages.each do |message| %>
-      <%= render 'messages/message', message: message %>
+      <% if message.user == current_user %>
+        <div class="d-flex justify-content-end"><%= render 'messages/message', message: message %></div>
+      <% else %>
+        <div class="user1"><%= render 'messages/message', message: message %></div>
+      <% end %>
     <% end %>
   </div>
 

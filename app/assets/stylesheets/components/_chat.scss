@@ -1,6 +1,6 @@
 
 .container-chat {
-  width: 75%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -12,6 +12,31 @@
   border-radius: 5px;
   border: 1px solid rgba(0,0,0,0.1);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width:  100%
 }
 
+.avatar-chat {
+  margin: 0;
+  height: 45px;
+  width: 45px;
+}
+.user1 {
+  border-radius: 5px;
+  margin-bottom: 7px;
+  background-color: lightpink;
+  color: #E63946;
+  padding: 10px 12px;
+  border-radius: 50px;
+  width: 50%;
+}
+.user2 {
 
+  border-radius: 5px;
+  margin-bottom: 7px;
+  background-color: lightblue;
+  color: #1D3557;
+  padding: 10px 12px;
+  border-radius: 50px;
+  width: 50%;
+
+}
