@@ -2,18 +2,24 @@
   <div class="row">
   <% @goals.each do |goal| %>
   <div class="col-md-4">
-    <div class="card border-profile card-profile text-center">
+    <div class="card border-profile card-profile text-center goal">
         <div class="card-body goal">
+        <div class="goal-icon">
+          <%= image_tag "#{goal.name}.png" %>
+        </div>
           <h5 id="name"><%= goal.name.upcase %></h5>
 
           <div class="card-block">
             <p class="text-muted-goals"><%= goal.description %></p>
 
-          <div class="btn btn"><%= link_to "Choose this goal",  edit_user_path(current_user, goal_id: goal.id) %></div>
         </div>
+      </div>
+      <div class="bnt-width">
+          <div class="btn btn"><%= link_to "Choose this goal",  edit_user_path(current_user, goal_id: goal.id) %></div>
       </div>
       </div>
     </div>
   <% end %>
   </div>
 </div>
+
