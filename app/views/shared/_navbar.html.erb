@@ -33,7 +33,7 @@
               <%= link_to "My buddy", user_path(current_user.buddy.id), class: "dropdown-item" %>
             <% end %>
             <% if current_user.buddyships.present? %>
-              <%= link_to "Accountability space", buddyship_path(current_user.buddyships.last), class: "dropdown-item" %>
+              <%= link_to "Chat", buddyship_path(current_user.buddyships.last), class: "dropdown-item" %>
             <% end %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
