@@ -20,7 +20,7 @@
       <% if message.user == current_user %>
         <div class="d-flex justify-content-end"><%= render 'messages/message', message: message %></div>
       <% else %>
-        <div class="user1"><%= render 'messages/message', message: message %></div>
+        <div><%= render 'messages/message', message: message %></div>
       <% end %>
     <% end %>
   </div>

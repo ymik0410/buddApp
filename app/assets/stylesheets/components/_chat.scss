@@ -9,7 +9,7 @@
 }
 
 .chat-title {
-  border-radius: 5px;
+  border-radius: 2px;
   border: 1px solid rgba(0,0,0,0.1);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width:  100%
@@ -21,22 +21,24 @@
   width: 45px;
 }
 .user1 {
-  border-radius: 5px;
+  border-radius: 2px;
   margin-bottom: 7px;
-  background-color: lightpink;
+  background-color: #ffb6c140;
   color: #E63946;
-  padding: 10px 12px;
-  border-radius: 50px;
-  width: 50%;
+  padding: 4px 15px;
+  border-radius: 20px;
+  width: 45%;
+  height: 40%;
 }
 .user2 {
 
-  border-radius: 5px;
+  border-radius: 2px;
   margin-bottom: 7px;
-  background-color: lightblue;
+  background-color: #add8e663;
   color: #1D3557;
-  padding: 10px 12px;
-  border-radius: 50px;
-  width: 50%;
-
+  padding: 4px 15px;
+  border-radius: 20px;
+  width: 45%;
+  height: 40%;
 }
+
