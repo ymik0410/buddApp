@@ -8,68 +8,58 @@
     margin-bottom: 200px;
 }
 
+.container-buddyship-new .card-deck {
+  justify-content: center;
+}
+
 .title-buddyship-new {
     font-size: 25px;
     font-weight: 100;
-    padding-top: 100px;
+    padding-top: 0px;
     color: #E63946;
 }
 
-.icon-buddyship-new {
-    bottom: 11px
-}
-
-.mt-100 {
-    margin-top: 50px
-}
-
-.profile-buddyship-new img {
+.profile-buddyship-new .avatar-bordered {
     width: 80px;
-    border-radius: 50%;
     border: solid 1px #1D3557;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
-.card-buddyship-new {
+// Main cards
+
+.container-buddyship-new .card {
+    border: 0;
     border-radius: 10px;
     margin-left: 30px;
+    margin-top: 50px;
     margin-right: 30px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
 }
-.card-title.buddyship-new {
+
+.container-buddyship-new .card-body {
+    min-height: 400px;
+    padding: 1.25rem 1.25rem 0 1.25rem;
+}
+
+.container-buddyship-new .card-footer {
+  background-color: transparent;
+  border: 0;
+  padding: 0 0 35px 0;
+}
+
+.container-buddyship-new .buddyship-goal {
     color: #1D3557;
     font-size: 15px;
-}
-
-.card-body.buddyship-new {
-    bottom: 35px;
-    min-height: 400px;
-}
-
-.btn-buddyship-new {
-    // margin-top: 36px;
-    margin-bottom: 40px;
-    background-color: #E63946;
-    border: none;
-    color: #fff
-}
-
-.btn:hover {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
-    color: #fff
 }
 
 .header {
     padding-top: 40px
 }
 
-
-
-.buddy-new{
-    margin-top:40px;
-    padding-top:40px;
+// TODO: Check if it's used or a typo of buddyship-new
+.buddy-new {
+    margin-top: 40px;
+    padding-top: 40px;
 }
 
 .card.user-card {
@@ -117,7 +107,6 @@
     padding: 25px;
 }
 
-
 .m-t-15 {
     margin-top: 15px;
 }
@@ -133,11 +122,10 @@
 
 .card .buddyships a {
   text-decoration: none;
-
 }
 
 .bio-graph-heading-buddyships {
-    background: #A8DADC   ;
+    background: #A8DADC;
     color: #fff;
     text-align: center;
     font-style: italic;
@@ -161,8 +149,4 @@
     text-decoration: none;
     color: black;
   }
-}
-
-#buddy {
-  margin-left: 20px;
 }

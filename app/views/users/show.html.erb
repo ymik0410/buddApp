@@ -16,6 +16,7 @@
                 <%= image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar-bordered" %>
               <% end %>
 
+
                 <h2 class="pt-3 pb-5 edit"><%= @user.username %>
                  <%= link_to edit_user_path(current_user) do %>
                         <i class="fas fa-user-edit fa-xs"></i>
@@ -23,6 +24,7 @@
                 </h2>
                 <h6 class="text-center border-top pt-2 streak"><strong>Current streak:</strong> <%= @user.streak%></h6>
                 <h6 class="text-center border-bottom pb-2 streak"><strong>Longest streak: </strong> <%= @user.longest_streak %></h6>
+
                 <br>
                 <h6 class="text-center"><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></h6>
                 <h6 class="text-center"><strong>Joined: </strong> <%= @user.created_at.strftime("%B %d, %Y") %></h6>

@@ -1,18 +1,25 @@
+
 <div class="container">
 <div class="row">
     <div class="col-sm">
       One of three columns
 
-<div id="messages" data-buddyship-id="<%= @buddyship.id %>">
-  <% @buddyship.messages.each do |message| %>
-    <%= render 'messages/message', message: message %>
-  <% end %>
+        <div id="messages" data-buddyship-id="<%= @buddyship.id %>">
+          <% @buddyship.messages.each do |message| %>
+          <%= render 'messages/message', message: message %>
+          <% end %>
+        </div>
+
+        <%= simple_form_for [ @buddyship, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Message" %>
+        <%= f.submit "Send", class: "btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-<%= simple_form_for [ @buddyship, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message" %>
-  <%= f.submit "Send", class: "btn" %>
-<% end %>
-</div>
+
     </div>
 
 </div>
+

@@ -1,6 +1,5 @@
 class DailyGoalsController < ApplicationController
 
-
   def create
     @daily_goal = DailyGoal.new(daily_goal_params)
     @daily_goal.user = current_user

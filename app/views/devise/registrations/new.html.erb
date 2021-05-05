@@ -18,13 +18,9 @@
                         input_html: { autocomplete: "Your last name", :placeholder => 'eg. Smith' }%>
             <%= f.input :username,
                         required: true,
+                        autofocus:true,
                         label: 'Username',
                         placeholder: 'e.g. MorningStar' %>
-            <%= f.input :country,
-                        :as => :string,
-                        required: false,
-                        autofocus: true,
-                        input_html: { autocomplete: "Choose your country", :placeholder => 'eg. France' }%>
             <%= f.input :date_of_birth,
                         as: :string,
                         start_year: 1920,
@@ -37,13 +33,7 @@
                         collection_wrapper_class: 'category-wrapper',
                         input_html: {class: 'category-selector'},
                         item_wrapper_class: 'category-item',
-                        collection:["Female", "Male", "Not say"] %>
-            <%= f.input :language,
-                        label: 'Language',
-                        placeholder: 'e.g. English' %>
-            <%= f.input :image,
-                        as: :file,
-                        label: 'Your avatar' %>
+                        collection:["Female", "Male", "Rather not say"] %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
