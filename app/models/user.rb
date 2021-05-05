@@ -18,6 +18,10 @@ class User < ApplicationRecord
     end
   end
 
+  def country_name
+    country_longname = ISO3166::Country[country]
+    country_longname.translations[I18n.locale.to_s] || country.name
+  end
   # def streakk
   #   @streak_count = 0
   #   today = Time.now.to_date
