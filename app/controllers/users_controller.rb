@@ -17,6 +17,10 @@ class UsersController < ApplicationController
   def show
     @daily_goal = DailyGoal.new
     @daily_goals = DailyGoal.all.order("created_at DESC")
+    # if @user.last_activity < Time.now.to_date - 1
+    #   @user.streak = 0
+    #   @user.save
+    # end
   end
 
   private
