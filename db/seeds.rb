@@ -10,30 +10,35 @@ User.destroy_all
 
 puts "destroyed"
 
-santa = User.create(first_name: "Santa", username: "Santana", last_name: "Cadusch", streak: 10, longest_streak: 11, last_activity: Time.now.to_date + 3, email: "santa@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote, country: "Switzerland" )
-yulia = User.create(first_name: "Yulia", last_name: "Mikhaylova", username: "Yuliana", email: "yulia@fanta.com", password: "123456", introduction: Faker::Movies::BackToTheFuture, goal_description: Faker::Movies::StarWars.quote, country: "Barbados" )
+# create users
+user1 = User.create!(first_name: "Gloria", last_name: "Lopez", username: "Espanolita", email: "gl@gmail.com", password: "123456", country: "Spain", introduction: "Hola! I am Gloria from Spain, I have 2 children and we live in sunny Costa del Sol.", goal_description: "I have struggled to get back in shape after having my kids. Every Monday I start again and by Wednesday I have gone off the track.", photo: "https://armenianweekly.com/wp-content/uploads/2012/06/arevik.jpg" )
+user2 = User.create!(first_name: "Anna", last_name: "Schmidt", username: "Pineapple1", email: "as@gmail.com", password: "123456", country: "Germany", introduction: "My name is Anna and I live in Berlin. I am a foodie and enjoyed going out and spending time with my friends and family who are also big food lovers.", goal_description: "It would be important for me to reach my goal as I want to improve my health but it is really hard to start as people around me eat the same way I do now and I want to change it.", photo: "https://vuesax.com/avatars/avatar-5.png" )
+user3 = User.create!(first_name: "Jane", last_name: "Brown", username: "JaneyB", email: "jb@gmail.com", password: "123456", country: "United Kingdom", introduction: "Hi there! Very excited to be here and find a like minded person to achieve my goal with. I was born and raised in London and still live here.", goal_description: "I work long hours and skip my meals very often. I find it hard to stick to healthy eating on daily basis.", photo:"https://vuesax.com/avatars/avatar-3.png" )
+santa = User.create(first_name: "Santa", last_name: "Cadusch", username: "Santana", email: "santa@fanta.com", password: "123456", introduction: "I am very happy to be part od BuddApp! :)", goal_description: "I finally want to commit and reach my goal and feel great in my body.", country: "Switzerland", photo: "https://kitt.lewagon.com/placeholder/users/casantadu", streak: 10, longest_streak: 11, last_activity: Time.now.to_date + 3 )
+sam = User.create(first_name: "Sam", last_name: "Hinton", username: "Samamam", email: "sam@fanta.com", password: "123456", introduction: "I enjoy long walks in the nature on the weekends.", goal_description: "I think this app would help me to be accountable to another person.", country: "Spain", photo: "https://kitt.lewagon.com/placeholder/users/samhinton88", streak: 5, longest_streak: 11, last_activity: Time.now.to_date + 3 )
+juli =  User.create(first_name: "Juliana", last_name: "Schlup", username: "Jujubeleza", email: "juli@fanta.com", password: "123456", introduction: "I love listening to the same music a million times.", goal_description: "If I am better today than I was yesterday I will be a winner.", country: "Brazil", photo: "https://kitt.lewagon.com/placeholder/users/juschlup", streak: 5, longest_streak: 74, last_activity: Time.now.to_date )
+# cataline = User.create(first_name: "Cataline", last_name: "Baert", username: "CBaert", email: "cataline@fanta.com", password: "123456", introduction: "I am very happy to be part od BuddApp! :)", goal_description: "I'm ready to seize any opportunity in web development!", country: "Switzerland", photo: "https://kitt.lewagon.com/placeholder/users/ctln12", streak: 20, longest_streak: 22, last_activity: Time.now.to_date + 1 )
+marc = User.create(first_name: "Mark", username: "Santana", last_name: "Tchuchuco", email: "mark@fanta.com", password: "123456", introduction: "I am very happy to be part od BuddApp! :)", goal_description: "I finally want to commit and reach my goal and feel great in my body.", country: "Chile", photo: "https://i.pinimg.com/280x280_RS/8f/0f/f6/8f0ff6a21eebb7f02577286a533f5b73.jpg", streak: 2, longest_streak: 10, last_activity: Time.now.to_date + 3 )
+
 
 puts "users created"
 
-Buddyship.create!(user1_id: santa.id, user2_id: yulia.id)
+# 50.times do
+#   user = User.create!(
+#   username: Faker::Games::Heroes.specialty,
+#   country: Faker::Address.country,
+#   first_name: Faker::Name.first_name,
+#   last_name: Faker::Name.last_name,
+#   email: Faker::Internet.email,
+#   password: "123456",
+#   introduction: Faker::TvShows::TheExpanse.quote,
+#   goal_description: Faker::TvShows::Buffy.quote
+# )
+# end
 
+Buddyship.create!(user1_id: santa.id, user2_id: juli.id)
 puts "buddyship created"
 
-50.times do
-  user = User.create!(
-  username: Faker::Games::Heroes.specialty,
-  country: Faker::Address.country,
-  first_name: Faker::Name.first_name,
-  last_name: Faker::Name.last_name,
-  email: Faker::Internet.email,
-  password: "123456",
-  introduction: Faker::TvShows::TheExpanse.quote,
-  goal_description: Faker::Movies::StarWars.quote
-)
-end
-user1 = User.create!(first_name: "Gloria", last_name: "Lopez", username: "Espanolita", email: "gl@gmail.com", password: "123456", country: "Spain", introduction: "Hola! I am Gloria from Spain, I have 2 children and we live in sunny Costa del Sol. I am very happy to be part od BuddApp! :)", goal_description: "I have struggled to get back in shape after having my kids. Every Monday I start again and by Wednesday I have gone off the track. I finally want to commit and reach my goal and feel great in my body.", photo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Carolina_Mar%C3%ADn_2014_%28cropped%29.jpg" )
-user2 = User.create!(first_name: "Anna", last_name: "Schmidt", username: "Pineapple1", email: "as@gmail.com", password: "123456", country: "Germany", introduction: "My name is Anna and I live in Berlin. I am a foodie and enjoyed going out and spending time with my friends and family who are also big food lovers.", goal_description: "It would be important for me to reach my goal as I want to improve my health but it is really hard to start as people around me eat the same way I do now and I want to change it.", photo: "https://i.pinimg.com/originals/7c/ca/6d/7cca6dfb54604fdef17282d84d737e5a.jpg")
-user3 = User.create!(first_name: "Jane", last_name: "Brown", username: "JaneyB", email: "jb@gmail.com", password: "123456", country: "United Kingdom", introduction: "Hi there! Very excited to be here and find a like minded person to achieve my goal with. I was born and raised in London and still live here. I enjoy long walks in the nature on the weekends.", goal_description: "I work long hours and skip my meals very often. I find it hard to stick to healthy eating on daily basis and I think it would help me to be accountable to another person.", photo:"http://2.bp.blogspot.com/-KRRjbk8tDQ8/UFnvdU-ejnI/AAAAAAAAAKY/hZohlhcb_lU/s400/stylish-girls-dp-facebook-7.jpg")
 
 # rename goals
 goal1 = Goal.create!(name: "Improve personal finances", description: "Having your personal finances in order, is one of the most important things you can do to live a healthy, happy and secure life.")
@@ -56,22 +61,22 @@ history3 = History.create!(user: user3, goal: goal3, start_date: Faker::Date.bet
 # history5 = History.create!(user: user2, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 # history6 = History.create!(user: user1, goal: goal4, start_date: Faker::Date.between(from: 100.days.ago, to: Date.today))
 
-100.times do
-  history = History.create!(
-  user: User.all.shuffle.first,
-  goal: Goal.all.shuffle.first,
-  start_date: Faker::Date.between(from: 300.days.ago, to: Date.today),
-  end_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
-  )
-end
+# 100.times do
+#   history = History.create!(
+#   user: User.all.shuffle.first,
+#   goal: Goal.all.shuffle.first,
+#   start_date: Faker::Date.between(from: 300.days.ago, to: Date.today),
+#   end_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
+#   )
+# end
 
-User.all.each do |user|
-  history = History.create!(
-  user: user,
-  goal: Goal.all.shuffle.first,
-  start_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
-  )
-end
+# User.all.each do |user|
+#   history = History.create!(
+#   user: user,
+#   goal: Goal.all.shuffle.first,
+#   start_date: Faker::Date.between(from: 100.days.ago, to: Date.today)
+#   )
+# end
 
 puts "Created #{Goal.count} goals."
 puts "Created #{User.count} users."
