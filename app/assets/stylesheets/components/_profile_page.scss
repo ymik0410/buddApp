@@ -101,6 +101,24 @@ height: 90%;
   }
 }
 
+.btn-profile-less-less {
+  color: #E63946;
+  border: 1px solid #E63946;
+  padding: 10px 35px;
+  border-radius: 50px;
+  font-weight: lighter;
+  text-decoration: none;
+  background-color: white;
+
+  &:hover {
+    color: #1D3557;
+    text-decoration: none;
+    border: 1px solid #1D3557;
+    background-color: white;
+
+  }
+}
+
 .nav-tabs .nav-link.active {
   background-color: white;
   border-bottom: none;
