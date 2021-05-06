@@ -2,6 +2,7 @@
 .container-chat {
   width: 60%;
   margin: 0 auto;
+
 }
 
 #messages {
@@ -9,10 +10,11 @@
 }
 
 .chat-title {
-  border-radius: 2px;
+  border-radius: 5px;
   border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width:  100%
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  width:  100%;
+  margin: 0 auto;
 }
 
 .avatar-chat {
@@ -29,6 +31,7 @@
   border-radius: 20px;
   width: 45%;
   height: 40%;
+  margin-left: 16px;
 }
 .user2 {
 
@@ -40,9 +43,27 @@
   border-radius: 20px;
   width: 45%;
   height: 40%;
+  margin-right: 16px;
 }
 
 .scrollbar {
   height: 60vh;
   overflow-y: scroll;
+}
+
+.chat-text {
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  width:  100%;
+  margin: 0 auto;
+
+}
+.btn-chat {
+  margin-right: 16px;
+}
+
+.card-body-chat {
+  padding-left: 0;
+  padding-right: 0;
 }
