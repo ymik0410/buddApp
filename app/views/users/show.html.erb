@@ -97,14 +97,14 @@
                     <% if current_user == @user %>
                     <%= simple_form_for @daily_goal do |f| %>
                       <h6><%= f.input :name, label: "Add new daily goal", class: "" %></h6>
-                      <%= f.submit "Submit", class: "btn" %>
+                      <%= f.submit "Submit", class: "btn-profile-less-less mb-2" %>
                     <% end %>
                     <% end %>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab"><p><%= @user.introduction %></p></div>
-                <div class="tab-pane fade" id="nav-motivation" role="tabpanel" aria-labelledby="nav-motivation-tab"><p><%= @user.goal_description %></p></div>
-                <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab"><h4>
+                <div class="tab-pane fade pr-3 pl-3" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab"><p><%= @user.introduction %></p></div>
+                <div class="tab-pane fade pr-3 pl-3" id="nav-motivation" role="tabpanel" aria-labelledby="nav-motivation-tab"><p><%= @user.goal_description %></p></div>
+                <div class="tab-pane fade pr-3 pl-3" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab"><h4>
                   <% @user.histories.order(:start_date).reverse.each do |history| %></h4>
                     <h6 class="text-center mr-4"><%= history.goal.name %></h6>
                     <p>Started: <%= history.start_date.strftime("%B %d, %Y") %></p>
@@ -173,7 +173,7 @@
                   <% if @user.buddy.present? %>
                     <h6 class="text-center"><strong>Country: </strong>
                     <% if @user.buddy.country.present? %>
-                      <%= @user.buddy.country %>
+                      <%= @user.buddy.country_name %>
                     <% else %>
                       <%= "Not available" %>
                     <% end %></h6>
