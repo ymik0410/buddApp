@@ -5,25 +5,27 @@
   background-position: 100% 60%;
   height: 60vh;
   color: white;
-  text-align: center;
   margin-bottom: 100px;
 
   h1 {
-  color: white;
-  text-align: center;
-  padding-top: 20vh;
-  text-shadow: 1px 2px black;
-  opacity: 1;
-  font-size: 40px;
+    color: white;
+    text-align: initial;
+    padding-top: 4vh;
+    text-shadow: 1px 2px black;
+    opacity: 1;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "CircularStd-Bold", sans-serif;
     }
 }
 
 
 .home {
-  background-image: asset-url('banner5.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('banner5.jpg');
 }
 
- body{margin-top:0px;
+ body {
+  margin-top:0px;
   background-color:white; }
 
 .align-center {
@@ -33,4 +35,17 @@
     display: block;
     padding: 0;
     margin: 0 auto;
+}
+
+.smaller-container {
+  width: 70vw;
+  margin-left: 10vw;
+
+  p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-align: initial;
+  }
 }
