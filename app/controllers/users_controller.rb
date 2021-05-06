@@ -17,7 +17,12 @@ class UsersController < ApplicationController
     # if @user.last_activity < Time.now.to_date - 1
     #   @user.streak = 0
     #   @user.save
-    # end
+
+    unless @buddyship.nil?
+      if @buddyship.destroy
+        redirect_to user_path(current_user)
+      end
+    end
   end
 
   private

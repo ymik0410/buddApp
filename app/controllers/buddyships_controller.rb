@@ -17,4 +17,10 @@ class BuddyshipsController < ApplicationController
     @buddyship = Buddyship.find(params[:id])
     @message = Message.new
   end
+
+  def destroy
+    @buddyship = Buddyship.find_by(user2_id: User.find(params[:id]).id)
+    @buddyship.destroy
+    redirect_to user_path(current_user)
+  end
 end

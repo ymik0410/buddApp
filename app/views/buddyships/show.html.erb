@@ -1,8 +1,18 @@
 <div class="container-chat">
  <!--  <div class="row"> -->
-  <div class="card-body">
+  <div class="card-body card-body-chat">
     <div class="panel">
       <div class="d-flex align-items-center chat-title pl-5 pt-3 pb-3">
+      <% if @buddyship.user2 == current_user %>
+        <% if @buddyship.user1.image.attached? %>
+          <%= cl_image_tag @buddyship.user1.image.key, class: "avatar avatar-chat" %>
+        <% elsif @buddyship.user1.photo.present? %>
+          <%= image_tag @buddyship.user1.photo, class: "avatar avatar-chat" %>
+        <% else %>
+          <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar avatar-chat" %>
+        <% end %>
+        <h5 class="pl-2">Conversation with <%= @buddyship.user1.username %></h5>
+        <% else %>
         <% if @buddyship.user2.image.attached? %>
           <%= cl_image_tag @buddyship.user2.image.key, class: "avatar avatar-chat" %>
         <% elsif @buddyship.user2.photo.present? %>
@@ -11,6 +21,7 @@
           <%=  image_tag 'https://bootdey.com/img/Content/avatar/avatar3.png', class: "avatar avatar-chat" %>
         <% end %>
         <h5 class="pl-2">Conversation with <%= @buddyship.user2.username %></h5>
+        <% end %>
       </div>
     </div>
   </div>
@@ -27,7 +38,7 @@
     </div>
   </div>
   <%= simple_form_for [ @buddyship, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Say hello and send some motivation to your buddy" %>
-      <%= f.submit "Send", class: "btn" %>
+    <%= f.input :content, label: false, placeholder: "Say hello and send some motivation to your buddy", input_html: {class: "chat-text"} %>
+      <%= f.submit "Send", class: "btn btn-chat" %>
     <% end %>
 </div>
