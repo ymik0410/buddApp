@@ -14,14 +14,14 @@
       </div>
     </div>
   </div>
+
   <div class="scrollbar">
     <div id="messages" data-buddyship-id="<%= @buddyship.id %>">
       <% @buddyship.messages.each do |message| %>
         <% if message.user == current_user %>
           <div class="d-flex justify-content-end"><%= render 'messages/message', message: message %></div>
         <% else %>
-          <div class="user1"><%= render 'messages/message', message: message %></div>
-        <% end %>
+          <div><%= render 'messages/message', message: message %></div>
       <% end %>
     </div>
   </div>
@@ -30,9 +30,3 @@
       <%= f.submit "Send", class: "btn" %>
     <% end %>
 </div>
-
-
-
-
-
-
