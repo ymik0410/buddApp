@@ -4,16 +4,16 @@
     <div class="header-buddyship">
         <div class="title-buddyship-new">
           We found
-          <i class="highlighted highlighted-red"> <%= @same_goal_available.take(3).size %> </i>
-          best buddymatches for you!
+          <span class="highlighted"> <%= @same_goal_available.take(3).size %> </span>
+          <span class="highlighted">best buddymatches</span> for you!
         </div>
-    </div>
-    <div class="btn-profile-less pt-3">
-      <%= link_to "Go back", user_path(current_user) %>
     </div>
 
     <!-- Buddy cards -->
     <div class="card-deck">
+      <div class="small-grey-link">
+        <%= link_to "Go back", user_path(current_user) %>
+      </div>
         <% @same_goal_available.take(3).each do |buddy| %>
         <div class="card col-md-3 mt-100 text-center">
             <div class="card-content">
@@ -43,12 +43,14 @@
                     <h2> <%= buddy.username %> </h2>
                     <div class="card-title buddyship-goal"> <%= buddy.current_goal.name %> </div>
                     <div class="card-title buddyship-new"> <%= buddy.country %> </div>
-                    <p class="text-muted"> <%= buddy.goal_description %> </p>
+                    <div class="buddy-inner-container">
+                      <p class="text-muted"> <%= buddy.goal_description %> </p>
+                    </div>
                 </div>
 
                 <!-- Choose button -->
                 <div class="card-footer">
-                  <div class="btn btn">
+                  <div class="btn buddy-btn-new">
                     <%= link_to "Choose #{buddy.username}" , buddyships_path(buddy: buddy.id), method: "POST" %>
                   </div>
                 </div>

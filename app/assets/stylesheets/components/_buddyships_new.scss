@@ -128,7 +128,6 @@
     background: #A8DADC;
     color: #fff;
     text-align: center;
-    font-style: italic;
     padding: 40px 110px;
     border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
@@ -149,4 +148,16 @@
     text-decoration: none;
     color: black;
   }
+}
+
+.buddy-inner-container {
+  min-height: 25vh;
+}
+
+.buddy-btn-new {
+  width: 90%;
+}
+
+.highlighted {
+  background-color: #add8e663;
 }
