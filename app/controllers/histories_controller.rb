@@ -1,6 +1,6 @@
 class HistoriesController < ApplicationController
 
   def index
-    @histories = Histories.all.order("created_at DESC")
+    @histories = History.order(:start_date).reverse
   end
 end
