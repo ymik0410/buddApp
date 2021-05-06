@@ -18,7 +18,7 @@
 
 
                 <h2 class="pt-3 pb-5 edit"><%= @user.username %>
-                 <%= link_to goals_path(current_user) do %>
+                 <%= link_to edit_user_path(current_user, goal_id: @user.histories.last.goal_id) do %>
                         <i class="fas fa-user-edit fa-xs"></i>
                       <% end %>
                 </h2>
@@ -35,11 +35,11 @@
                     <%= "Not available" %>
                   <% end %></h6>
                   <h6 class="text-center"><strong>Country: </strong>
-                    <%# if @user.country.present? %>
-                      <%#= @user.country_name  %>
-                    <%# else %>
-                      <%#= "Not available" %>
-                    <%# end %></h6>
+                    <% if @user.country.present? %>
+                      <%= @user.country_name  %>
+                    <% else %>
+                      <%= "Not available" %>
+                    <% end %></h6>
                   </div>
                   <br>
                   <br>
