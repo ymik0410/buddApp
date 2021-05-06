@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 2021_05_04_184910) do
     t.string "language"
     t.integer "streak", default: 0
     t.integer "longest_streak", default: 0
-    t.date "last_activity", default: "2021-01-24"
+    t.date "last_activity"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
