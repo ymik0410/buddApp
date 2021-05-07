@@ -38,7 +38,7 @@
                         Joined <%= days %> days ago
                       <% end %>
                     </h6>
-                    <% if days.between?(1, 49) %>
+                    <% if days.between?(0, 49) %>
                       <%= image_tag "beginner_color.png", class: "hello" %>
                     <% elsif days.between?(50, 100) %>
                       <%= image_tag "half_color.png", class: "hello" %>
