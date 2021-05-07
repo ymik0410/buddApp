@@ -148,6 +148,9 @@
                     <br>
                     <br>
                     <div class="btn"><%= link_to "Find your buddy", new_buddyship_path %></div>
+                    <br>
+                    <br>
+                    <h5 class="text-center">or wait to be matched</h4>
                   <% end %>
                   <% if @user.buddy.present? %>
                     <h6 class="text-center border-top pt-2 streak"><strong>Current streak: </strong> <%= @user.buddy.streak %></h6>
