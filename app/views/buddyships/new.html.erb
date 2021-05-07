@@ -30,14 +30,20 @@
                     </div>
                     <!-- Days on app -->
 
-                    <h6 class="text-center">Joined <%= days = (Date.today.to_date - buddy.created_at.to_date).to_i %> days ago </h6>
-                    <% if days < 50 %>
+                    <h6 class="text-center">
+                      <% days = (Date.today.to_date - buddy.created_at.to_date).to_i %>
+                      <% if days == 0 %>
+                        Joined today
+                      <% else %>
+                        Joined <%= days %> days ago
+                      <% end %>
+                    </h6>
+                    <% if days.between?(1, 49) %>
                       <%= image_tag "beginner_color.png", class: "hello" %>
                     <% elsif days.between?(50, 100) %>
                       <%= image_tag "half_color.png", class: "hello" %>
                     <% else %>
                       <%= image_tag "advanced2.png", class: "hello" %>
-
                     <% end %>
                     <!-- Profile description -->
                     <h2> <%= buddy.username %> </h2>
